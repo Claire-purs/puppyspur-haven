@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Puppy Pur – USDA-licensed, AKC-registered family breeder in Hillsboro, Texas. Maltipoos, Corgis, Goldendoodles, and more. Health-tested, 2-year guarantee, nationwide delivery." />
+  <title>Puppy Pur | AKC-Registered Family Breeder in Hillsboro, Texas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.5;scroll-behavior:smooth}
+    body{background:#000;overflow-x:hidden}
+    a{color:#fff;text-decoration:none;transition:all .25s;display:block}
+    a:hover{color:#ff9100}
+    h1,h2,h3,h4,h5{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
+    .container{max-width:1240px;margin:auto;padding:0 1rem}
+    header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
+    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem}
+    .green-banner a{color:#fff;text-decoration:underline}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100}
+    .logo svg{fill:#ff9100;width:32px;height:32px}
+    .logo span{font-size:.85rem;color:#aaa;margin-left:.5rem}
+    .nav-links{display:flex;gap:2rem;font-size:.95rem}
+    .nav-links a{color:#fff;font-weight:600;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ff9100;transition:width .3s}
+    .nav-links a:hover::after{width:100%}
+    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem}
+    .right a{color:#ff9100;font-weight:600;display:flex;align-items:center;gap:.4rem}
+    .hamburger{display:none;cursor:pointer;font-size:1.8rem;color:#fff}
+    .hero{position:relative;height:80vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+    .hero .overlay{position:relative;z-index:1}
+    .hero h1{font-size:4rem;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+    .hero p{font-size:1.3rem;color:#ddd;margin:1rem 0}
+    .hero .btn{background:#ff9100;color:#000;padding:1rem 2.8rem;border-radius:50px;font-weight:700;font-size:1.1rem}
+    .hero .btn:hover{background:#ffb84d;transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,145,0,.4)}
+    .trustpilot{margin-top:1.5rem;display:flex;align-items:center;gap:0.4rem;justify-content:center;flex-wrap:nowrap}
+    /* ANIMATED COUNTER */
+    #counter{padding:5rem 0;background:#111}
+    .counter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:center}
+    .counter-item{background:#222;padding:2.5rem 1.5rem;border-radius:16px}
+    .counter-number{color:#ff9100;font-size:4.5rem;font-weight:800;margin-bottom:.5rem;line-height:1}
+    .counter-label{font-size:1.1rem;color:#ccc}
+    section{padding:4.5rem 0}
+    .bg-dark{background:#111}
+    .scroll-wrapper{overflow:hidden;position:relative;padding:1rem 0}
+    .scroll-container{display:flex;transition:transform .5s ease;gap:1.2rem;padding:0 1rem}
+    .scroll-controls{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none;z-index:10}
+    .scroll-controls button{
+      background:#ff9100;color:#000;border:none;width:44px;height:44px;border-radius:50%;font-size:1.4rem;
+      cursor:pointer;pointer-events:all;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.4)
+    }
+    .scroll-controls button:hover{background:#ffb84d}
+    .breeds-section .scroll-container{gap:1rem}
+    .breed-slide{
+      flex:0 0 calc(70% - 1rem);max-width:240px;background:#222;border-radius:14px;overflow:hidden;
+      transition:all .3s cubic-bezier(0.25,0.8,0.25,1);position:relative
+    }
+    .breed-slide:hover{transform:scale(1.04);box-shadow:0 10px 20px rgba(255,145,0,0.2)}
+    .breed-slide img{width:100%;height:150px;object-fit:cover;transition:.3s}
+    .breed-slide:hover img{transform:scale(1.05)}
+    .breed-slide p{padding:.9rem;font-weight:600;color:#fff;text-align:center;font-size:.95rem}
+    .spotlight-section .scroll-container{gap:1.2rem}
+    .puppy-card{
+      flex:0 0 calc(80% - 1rem);max-width:280px;background:#222;border-radius:16px;overflow:hidden;
+      position:relative;transition:all .35s cubic-bezier(0.25,0.8,0.25,1);cursor:pointer;
+      transform:scale(1);box-shadow:0 6px 16px rgba(0,0,0,0.25)
+    }
+    .puppy-card:hover,.puppy-card.touched{
+      transform:scale(1.04);box-shadow:0 18px 36px rgba(255,145,0,0.2),0 0 28px rgba(255,145,0,0.15);z-index:5
+    }
+    .puppy-card img{width:100%;height:200px;object-fit:cover}
+    .puppy-info{padding:1rem;text-align:center}
+    .puppy-info h3{font-size:1.15rem;color:#fff;margin-bottom:.2rem}
+    .puppy-info p{font-size:.85rem;color:#ccc;line-height:1.4}
+    .heart-icon{
+      position:absolute;top:10px;right:10px;background:#fff;color:#ff9100;padding:5px;border-radius:50%;
+      font-size:1rem;cursor:pointer;transition:all .2s ease;z-index:10
+    }
+    .heart-icon:hover,.heart-icon.touched{
+      background:#ff9100;color:#fff;transform:scale(1.3) rotate(15deg);animation:pulse .6s ease
+    }
+    @keyframes pulse{
+      0%{transform:scale(1.3) rotate(15deg)}50%{transform:scale(1.5) rotate(20deg)}100%{transform:scale(1.3) rotate(15deg)}
+    }
+    .testimonials-section{padding:4rem 0;background:#111;position:relative;overflow:hidden}
+    .testimonials-header{display:flex;gap:3rem;align-items:start;max-width:1240px;margin:auto;flex-wrap:wrap}
+    .testimonials-header .left{flex:1;min-width:280px;text-align:center}
+    .testimonials-header .left h2{font-size:2.3rem;color:#fff;margin-bottom:.5rem}
+    .testimonials-header .left .verified{color:#66bb6a;font-size:1rem;display:flex;align-items:center;gap:.3rem;margin:.5rem 0;justify-content:center}
+    .testimonials-header .left .verified i{color:#66bb6a}
+    .testimonials-header .left p{font-size:1rem;color:#ccc;line-height:1.6;margin-bottom:1.5rem}
+    .testimonials-header .left .read-all a{background:#fff;color:#000;padding:.8rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem}
+    .testimonials-wrapper{flex:2;min-width:300px;overflow:hidden;position:relative}
+    .testimonials-container{display:flex;transition:transform .5s ease;gap:1.5rem;padding:0 1rem}
+    .testimonial-slide{
+      flex:0 0 calc(85% - 1rem);max-width:360px;background:#222;border-radius:14px;overflow:hidden;
+      transition:all .3s ease;cursor:pointer;transform:translateY(0);
+      box-shadow:0 4px 12px rgba(0,0,0,0.2)
+    }
+    .testimonial-slide:hover,.testimonial-slide.touched{
+      transform:translateY(-8px);
+      box-shadow:0 16px 32px rgba(255,145,0,0.15),0 0 20px rgba(255,145,0,0.1);
+      border:1px solid rgba(255,145,0,0.3)
+    }
+    .testimonial-slide img{width:100%;height:170px;object-fit:cover}
+    .testimonial-content{padding:1.4rem}
+    .testimonial-content .stars{font-size:1rem;color:#00b67a;margin-bottom:.8rem;display:flex;gap:2px}
+    .testimonial-content p{font-size:.93rem;color:#ddd;line-height:1.6;margin-bottom:1rem}
+    .testimonial-content .author{color:#66bb6a;font-size:.88rem;display:flex;align-items:center;gap:.3rem}
+    .testimonial-content .author i{color:#66bb6a}
+    .testimonial-content .date{color:#888;font-size:.83rem;margin-bottom:.5rem}
+    .about-section,.promise-section{padding:4rem 0;background:#111;text-align:center}
+    .about-section h2,.promise-section h2{font-size:2.3rem;color:#ff9100;margin-bottom:1rem}
+    .about-section p,.promise-section p{font-size:1rem;color:#ccc;max-width:800px;margin:auto;line-height:1.7}
+    .contact-section{background:#111;padding:5rem 0;text-align:center;position:relative}
+    .contact-header h2{font-size:2.5rem;color:#fff;margin-bottom:.5rem}
+    .contact-header p{font-size:1.1rem;color:#ccc;margin-bottom:3rem;max-width:700px;margin:auto}
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem;max-width:1000px;margin:auto}
+    .contact-card{background:#222;padding:2.5rem;border-radius:20px;text-align:left;position:relative;overflow:hidden}
+    .contact-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:#ff9100}
+    .contact-card h3{font-size:1.6rem;color:#fff;margin-bottom:.8rem}
+    .contact-card p{font-size:1rem;color:#ccc;line-height:1.7;margin-bottom:1.5rem}
+    .contact-card .phone{display:flex;align-items:center;gap:.5rem;font-size:1.1rem;color:#ff9100;font-weight:600}
+    .contact-card .phone i{color:#ff9100}
+    .contact-card .hours{margin-top:1rem;font-size:.95rem;color:#aaa}
+    .contact-card .btn{background:#fff;color:#000;padding:.8rem 2rem;border-radius:50px;font-weight:600;display:inline-block;margin-top:1.5rem}
+    .contact-card .btn:hover{background:#ffb84d}
+    .pre-footer{background:#111;padding:3rem 0;border-top:1px solid #222}
+    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;text-align:center}
+    .pre-footer .social a{margin:0 .7rem;font-size:1.6rem;color:#ff9100;transition:.2s}
+    .pre-footer .social a:hover{transform:scale(1.2)}
+    .payment-secure{text-align:center;margin-top:2rem;font-size:.95rem;color:#aaa}
+    .trust-badges{display:flex;justify-content:center;gap:2rem;margin-top:1rem;flex-wrap:wrap;align-items:center}
+    .trust-badges img{height:40px;filter:grayscale(100%) opacity(0.7);transition:.3s}
+    .trust-badges img:hover{filter:grayscale(0%) opacity(1)}
+    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center}
+    footer a{color:#ff9100}
+    @media(max-width:992px){
+      .testimonials-header{flex-direction:column;align-items:center}
+      .testimonials-header .left{text-align:center}
+      .testimonials-wrapper{flex:none;width:100%}
+      .testimonial-slide{flex:0 0 calc(80% - 1rem)}
+      .breed-slide{flex:0 0 calc(65% - 1rem);max-width:220px}
+      .breed-slide img{height:130px}
+      .puppy-card{flex:0 0 calc(75% - 1rem)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:767px){
+      .hamburger{display:block}
+      .nav-links,.right{display:none}
+      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1rem;border-bottom:1px solid #222}
+      .hero h1{font-size:2.8rem}
+      .trustpilot{gap:0.3rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="green-banner">
+      <div class="container">Adopt Before Christmas — Limited Litters! Call <a href="tel:+13142055888">+1 (314) 205-5888</a> or <a href="https://wa.me/13142055888" target="_blank">WhatsApp</a></div>
+    </div>
+    <div class="nav-bar container">
+      <div class="logo">
+        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        Puppy Pur
+        <span>AKC Family Breeder • Hillsboro, Texas</span>
+      </div>
+      <div class="nav-links">
+        <a href="#available">Available Puppies</a>
+        <a href="#promise">Our Promise</a>
+        <a href="#about">About Us</a>
+        <a href="/how-it-works.html">How It Works</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="right">
+        <a href="https://wa.me/13142055888" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a>
+        <a href="tel:+13142055888"><i class="fas fa-phone"></i> Call</a>
+      </div>
+      <div class="hamburger">Menu</div>
+    </div>
+  </header>
+
+  <!-- HERO – PERFECT TRUSTPILOT (star glued to text) -->
+  <section class="hero">
+    <video autoplay loop muted playsinline poster="VIDEO/hero-poster.jpg">
+      <source src="VIDEO/merle.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <div class="overlay container">
+      <h1>AKC Puppies Raised With Love</h1>
+      <p>USDA-licensed • Health-tested parents • 2-year guarantee • Nationwide delivery</p>
+      <a href="#available" class="btn">View Available Puppies</a>
+
+      <div class="trustpilot">
+        <svg width="105" height="26" viewBox="0 0 135 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.763 0L8.0809 8.06432L0 8.60227L6.43018 14.1199L4.83636 22.3977L11.763 18.0761L18.6896 22.3977L17.0958 14.1199L23.526 8.60227L15.4451 8.06432L11.763 0Z" fill="#00B67A"/>
+          <text x="30" y="19" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold">Trustpilot</text>
+        </svg>
+        <img src="https://cdn.trustpilot.net/brand-assets/4.2.0/stars/stars-4.5.svg" alt="4.5 stars" style="height:32px;">
+        <span style="color:#ccc;font-weight:500;font-size:1.1rem;margin-left:6px;">92+ reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMATED COUNTER -->
+  <section id="counter">
+    <div class="container">
+      <div class="counter-grid">
+        <div class="counter-item">
+          <div class="counter-number" data-target="9">0+</div>
+          <div class="counter-label">Years of Breeding</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="91">0+</div>
+          <div class="counter-label">Satisfied PurEver Home</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="91">0+</div>
+          <div class="counter-label">Puppies Delivered</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="80">0%</div>
+          <div class="counter-label">Families Trust & Retention Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR MOST LOVED BREEDS -->
+  <section id="available" class="breeds-section">
+    <div class="container">
+      <h2 style="text-align:center;color:#ff9100;margin-bottom:1rem">Our Most Loved Breeds</h2>
+      <p style="text-align:center;color:#ccc;margin-bottom:1.8rem">Hand-selected from our Hillsboro, Texas family kennels.</p>
+      <div class="scroll-wrapper">
+        <div class="scroll-container" id="breeds">
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Maltipoo Prrofile/maltipoo.html" class="breed-slide"><img src="breeds/maltipoo.jpg" alt="Maltipoo"><p>Maltipoo</p></a>
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Welsh Corgi/pembroke-welsh-corgis.html" class="breed-slide"><img src="breeds/corgi.jpg" alt="Pembroke Welsh Corgi"><p>Pembroke Welsh Corgi</p></a>
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Merle Corgi Profilee/merle-pembroke-welsh-corgi.html" class="breed-slide"><img src="breeds/merle-corgi.jpg" alt="Merle Corgi"><p>Merle Corgi</p></a>
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Cavapoo Profile/cavapoo.html" class="breed-slide"><img src="breeds/cavapoo.jpg" alt="Cavapoo"><p>Cavapoo</p></a>
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Goldendoodle Profile/goldendoodle.html" class="breed-slide"><img src="breeds/goldendoodle.jpg" alt="Goldendoodle"><p>Goldendoodle</p></a>
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Bernedoodle Puppies/bernedoodle.html" class="breed-slide"><img src="breeds/bernedoodle.jpg" alt="Bernedoodle"><p>Bernedoodle</p></a>
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Havanese Profile/havanese.html" class="breed-slide"><img src="breeds/havanese.jpg" alt="Havanese"><p>Havanese</p></a>
+          <a href="PuppyBreeds/mini-poodle.html" class="breed-slide"><img src="breeds/poodle.jpg" alt="Mini Poodle"><p>Mini Poodle</p></a>
+          <a href="PuppyBreeds/Our Customer Favourite Breeds/Golden Retriever Profile/golden-retriever.html" class="breed-slide"><img src="breeds/golden-retriever.jpg" alt="Golden Retriever"><p>Golden Retriever</p></a>
+        </div>
+        <div class="scroll-controls">
+          <button id="breed-prev"><i class="fas fa-chevron-left"></i></button>
+          <button id="breed-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PROMISE -->
+  <section id="promise" class="promise-section">
+    <div class="container">
+      <h2>Our Promise to You</h2>
+      <p>Every puppy comes with a 2-year health guarantee, AKC/ICA registration, microchip, and lifetime breeder support. We’ve placed over 1,200 puppies since 2014.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About Puppy Pur</h2>
+      <p>Family-owned in Hillsboro, Texas 76645. USDA #43-A-6211. We partner only with health-tested, loving breeders. Your puppy is raised in-home, never in cages.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS – ALL 12 FULL REVIEWS RESTORED -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="left">
+          <h2>Real Families, Real Stories</h2>
+          <p class="verified"><i class="fas fa-check-circle"></i> Verified Puppy Parents</p>
+          <p>Over 1,200 families trust us. Minor delays happen — we’re honest about it.</p>
+          <a href="/reviews" class="read-all">Read All 1,247 Reviews</a>
+        </div>
+      </div>
+      <div class="scroll-wrapper">
+        <div class="scroll-container" id="testimonials">
+          <div class="testimonial-slide"><img src="reviews/sarah.jpg" alt="Sarah"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>Amazing experience! Only hiccup was flight delay — puppy arrived safe. Worth every penny.</p><p class="author"><i class="fas fa-check-circle"></i> Sarah M., St. Louis, MO</p><p class="date">Oct 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/james.jpg" alt="James"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div><p>Great pup, healthy. Crate was small for travel. Otherwise 10/10 service.</p><p class="author"><i class="fas fa-check-circle"></i> James & Lisa T., Chicago, IL</p><p class="date">Sep 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/emily.jpg" alt="Emily"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Perfect Cavapoo! Weekly updates with photos. Delivery was smooth.</p><p class="author"><i class="fas fa-check-circle"></i> Emily R., Denver, CO</p><p class="date">Nov 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/michael.jpg" alt="Michael"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Our Maltipoo is perfect. Customer service was outstanding!</p><p class="author"><i class="fas fa-check-circle"></i> Michael K., Austin, TX</p><p class="date">Nov 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/jessica.jpg" alt="Jessica"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>Beautiful healthy puppy. Only wish was more flight updates.</p><p class="author"><i class="fas fa-check-circle"></i> Jessica L., Miami, FL</p><p class="date">Oct 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/david.jpg" alt="David"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Best experience ever. Our Corgi is perfect and healthy!</p><p class="author"><i class="fas fa-check-circle"></i> David & Amy P., Seattle, WA</p><p class="date">Nov 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/olivia.jpg" alt="Olivia"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Couldn’t be happier! Our Goldendoodle is a dream.</p><p class="author"><i class="fas fa-check-circle"></i> Olivia S., Nashville, TN</p><p class="date">Oct 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/robert.jpg" alt="Robert"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div><p>Great puppy, communication was excellent. Minor crate issue.</p><p class="author"><i class="fas fa-check-circle"></i> Robert H., Boston, MA</p><p class="date">Sep 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/sophia.jpg" alt="Sophia"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Absolutely perfect! Our Pomeranian is everything we wanted.</p><p class="author"><i class="fas fa-check-circle"></i> Sophia G., Los Angeles, CA</p><p class="date">Nov 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/william.jpg" alt="William"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>Healthy beautiful pup. Only wish was faster delivery updates.</p><p class="author"><i class="fas fa-check-circle"></i> William & Karen B., Phoenix, AZ</p><p class="date">Oct 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/ava.jpg" alt="Ava"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Our Havanese is perfect! Thank you Puppy Pur!</p><p class="author"><i class="fas fa-check-circle"></i> Ava M., Portland, OR</p><p class="date">Nov 2025</p></div></div>
+          <div class="testimonial-slide"><img src="reviews/noah.jpg" alt="Noah"><div class="testimonial-content"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Best decision ever. Our Corgi is healthy and happy!</p><p class="author"><i class="fas fa-check-circle"></i> Noah & Emma R., Atlanta, GA</p><p class="date">Nov 2025</p></div></div>
+        </div>
+        <div class="scroll-controls">
+          <button id="prev"><i class="fas fa-chevron-left"></i></button>
+          <button id="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUPPY SPOTLIGHT – ALL 10 PUPPIES RESTORED -->
+  <section class="spotlight-section">
+    <div class="container">
+      <h2 style="text-align:center;color:#ff9100;margin-bottom:2rem">Puppy Spotlight</h2>
+      <div class="scroll-wrapper">
+        <div class="scroll-container" id="spotlight">
+          <a href="maltipoo/biscuit.html" class="puppy-card"><img src="spotlight/biscuit.jpg" alt="Biscuit"><div class="puppy-info"><h3>Biscuit</h3><p>Maltipoo • Male</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="maltipoo/marshmallow.html" class="puppy-card"><img src="spotlight/marshmallow.jpg" alt="Marshmallow"><div class="puppy-info"><h3>Marshmallow</h3><p>Maltipoo • Male</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="pembroke-corgi/baron.html" class="puppy-card"><img src="spotlight/baron.jpg" alt="Baron"><div class="puppy-info"><h3>Baron</h3><p>Corgi • Male</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="pembroke-corgi/duchess.html" class="puppy-card"><img src="spotlight/duchess.jpg" alt="Duchess"><div class="puppy-info"><h3>Duchess</h3><p>Corgi • Female</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="pembroke-corgi/lord.html" class="puppy-card"><img src="spotlight/lord.jpg" alt="Lord"><div class="puppy-info"><h3>Lord</h3><p>Corgi • Male</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="goldendoodle/cooper.html" class="puppy-card"><img src="spotlight/cooper.jpg" alt="Cooper"><div class="puppy-info"><h3>Cooper</h3><p>Goldendoodle • Male</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="cavapoo/ruby.html" class="puppy-card"><img src="spotlight/ruby.jpg" alt="Ruby"><div class="puppy-info"><h3>Ruby</h3><p>Cavapoo • Female</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="bernedoodle/teddy.html" class="puppy-card"><img src="spotlight/teddy.jpg" alt="Teddy"><div class="puppy-info"><h3>Teddy</h3><p>Bernedoodle • Male</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="pomeranian/perseus.html" class="puppy-card"><img src="spotlight/perseus.jpg" alt="Perseus"><div class="puppy-info"><h3>Perseus</h3><p>Pomeranian • Male</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+          <a href="havanese/bella.html" class="puppy-card"><img src="spotlight/bella.jpg" alt="Bella"><div class="puppy-info"><h3>Bella</h3><p>Havanese • Female</p></div><div class="heart-icon"><i class="far fa-heart"></i></div></a>
+        </div>
+        <div class="scroll-controls">
+          <button id="spotlight-prev"><i class="fas fa-chevron-left"></i></button>
+          <button id="spotlight-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-header">
+        <h2>Contact Us</h2>
+        <p>Real people, real help — 7 days a week.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>New Puppy Parents</h3>
+          <p>Ready to find your match? Talk to a Puppy Concierge today.</p>
+          <div class="phone"><i class="fas fa-phone"></i> (314) 205-5888</div>
+          <div class="hours">Mon–Sat: 9AM–7PM CST<br>Sunday: 10AM–5PM CST</div>
+        </div>
+        <div class="contact-card">
+          <h3>Current Families</h3>
+          <p>Tracking, health questions, or travel updates — we’re here.</p>
+          <a href="/help" class="btn">Visit Help Center</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE-FOOTER – PAYPAL, VENMO, CASH APP + HORIZONTAL SOCIAL -->
+  <section class="pre-footer">
+    <div class="container grid">
+      <div>Over 1,200 happy families since 2014. Your perfect puppy is waiting.</div>
+      <div><strong>Need help?</strong><br><a href="tel:+13142055888">(314) 205-5888</a><br>Mon–Sat 9AM–7PM CST</div>
+      <div>
+        <strong>Follow us</strong>
+        <div class="social" style="display:flex;gap:1.2rem;justify-content:center;margin-top:.5rem;">
+          <a href="https://instagram.com/puppypur_official" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/puppypur" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://tiktok.com/@puppypur" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container payment-secure">
+      <p>Secure payments via <strong>PayPal • Venmo • Cash App</strong></p>
+      <div class="trust-badges">
+        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal">
+        <img src="https://venmo.com/assets/branding/venmo-logo.png" alt="Venmo" style="height:36px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Cash_App_logo.png" alt="Cash App" style="height:38px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2025 Puppy Pur • Hillsboro, Texas 76645 • USDA #43-A-6211 • <a href="/terms.html">Terms</a> • <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <!-- FULL SCRIPT -->
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    const counters = document.querySelectorAll('.counter-number');
+    const targets = [9, 91, 91, 80];
+    const suffixes = ['+', '+', '+', '%'];
+    let triggered = false;
+
+    const animateCounters = () => {
+      counters.forEach((counter, i) => {
+        let count = 0;
+        const target = targets[i];
+        const inc = target / 100;
+        const update = () => {
+          if (count < target) {
+            count += inc;
+            counter.innerHTML = Math.ceil(count) + suffixes[i];
+            requestAnimationFrame(update);
+          } else {
+            counter.innerHTML = target + suffixes[i];
+          }
+        };
+        update();
+      });
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!triggered && document.getElementById('counter').getBoundingClientRect().top < window.innerHeight * 0.8) {
+        animateCounters();
+        triggered = true;
+      }
+    });
+
+    function initScroll(id, prev, next) {
+      const container = document.getElementById(id);
+      const prevBtn = document.getElementById(prev);
+      const nextBtn = document.getElementById(next);
+      let index = 0;
+      function scroll() {
+        const card = container.children[0];
+        const gap = parseFloat(getComputedStyle(container).gap) || 16;
+        const width = card.offsetWidth + gap;
+        container.style.transform = `translateX(-${index * width}px)`;
+      }
+      nextBtn.onclick = () => {
+        const max = container.children.length - Math.floor(container.parentElement.offsetWidth / (container.children[0].offsetWidth + 16));
+        index = Math.min(index + 1, Math.max(0, max));
+        scroll();
+      };
+      prevBtn.onclick = () => {
+        index = Math.max(index - 1, 0);
+        scroll();
+      };
+      window.addEventListener('resize', () => { index = 0; scroll(); });
+      scroll();
+    }
+
+    initScroll('breeds', 'breed-prev', 'breed-next');
+    initScroll('testimonials', 'prev', 'next');
+    initScroll('spotlight', 'spotlight-prev', 'spotlight-next');
+
+    let startX = 0;
+    ['breeds','testimonials','spotlight'].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive:true});
+      el.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) document.getElementById(diff > 0 ? (id==='breeds'?'breed-next':id==='testimonials'?'next':'spotlight-next') : (id==='breeds'?'breed-prev':id==='testimonials'?'prev':'spotlight-prev')).click();
+      }, {passive:true});
+    });
+
+    document.querySelectorAll('.breed-slide,.puppy-card,.testimonial-slide,.heart-icon').forEach(el => {
+      el.addEventListener('touchstart', () => el.classList.add('touched'), {passive:true});
+      el.addEventListener('touchend', () => setTimeout(() => el.classList.remove('touched'), 300), {passive:true});
+    });
+  </script>
+</body>
+</html>
