@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="How It Works at PuppysPur – From finding your perfect Corgi to bringing them home safely." />
+  <title>How It Works | PuppysPur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.5;scroll-behavior:smooth}
+    body{background:#000;overflow-x:hidden;position:relative}
+    a{color:#fff;text-decoration:none;transition:all .25s}
+    a:hover{color:#ff9100}
+    h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
+    .container{max-width:1240px;margin:auto;padding:0 1rem}
+    header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
+    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem}
+    .green-banner a{color:#fff;text-decoration:underline}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100}
+    .logo i{font-size:2.2rem;color:#ff9100}
+    .logo span{font-size:.85rem;color:#aaa;margin-left:.5rem}
+    .nav-links{display:flex;gap:2rem;font-size:.95rem}
+    .nav-links a{color:#fff;font-weight:600;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ff9100;transition:width .3s}
+    .nav-links a:hover::after{width:100%}
+    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem}
+    .right a{color:#ff9100;font-weight:600;display:flex;align-items:center;gap:.4rem}
+    .hamburger{display:none;cursor:pointer;font-size:1.8rem;color:#fff}
+    .hero{position:relative;height:60vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:#111}
+    .hero .overlay{position:relative;z-index:1;padding:2rem}
+    .hero h1{font-size:3.5rem;color:#fff;margin-bottom:1rem}
+    .hero p{font-size:1.2rem;color:#ddd;max-width:800px;margin:auto}
+    /* STICKY TIMELINE - NO LINE */
+    .timeline-wrapper{position:sticky;top:80px;z-index:999;background:#000;padding:2rem 0;border-bottom:1px solid #222}
+    .timeline{display:flex;justify-content:space-between;align-items:center;position:relative}
+    .step{position:relative;z-index:1;text-align:center;flex:1;transition:all .4s}
+    .step-circle{width:60px;height:60px;border-radius:50%;background:#444;color:#aaa;font-size:1.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;transition:all .4s}
+    .step.active .step-circle{background:#66bb6a;color:#000}
+    .step-title{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:#aaa;transition:all .4s}
+    .step.active .step-title{color:#fff}
+    .step-desc{font-size:.95rem;color:#666;transition:all .4s}
+    .step.active .step-desc{color:#ccc}
+    .steps-detail{padding:4rem 0;background:#111}
+    .step-detail{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:5rem;position:relative}
+    .step-detail::before{content:'';position:absolute;top:0;bottom:0;width:4px;background:#66bb6a;left:50%;transform:translateX(-50%);z-index:0}
+    .step-detail.reverse::before{left:auto;right:50%;transform:translateX(50%)}
+    .step-media{
+      position:relative;overflow:hidden;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      transform:rotate(-3deg);max-width:460px;justify-self:center
+    }
+    .step-detail.reverse .step-media{transform:rotate(3deg)}
+    .step-media img,.step-media video{width:100%;height:350px;object-fit:cover;display:block}
+    .step-content{position:relative;z-index:1;background:#111;padding:1.8rem;border-radius:16px;max-width:500px}
+    .step-content h3{font-size:2rem;color:#ff9100;margin-bottom:1rem}
+    .step-content p{font-size:1rem;color:#ddd;line-height:1.7}
+    .step-number{font-size:5rem;color:#ff9100;opacity:.2;position:absolute;top:-20px;left:-20px;font-weight:800}
+    .pre-footer{background:#111;padding:3rem 0;border-top:1px solid #222}
+    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;text-align:center;align-items:start}
+    .pre-footer .social a{margin:0 .7rem;font-size:1.6rem;color:#ff9100;transition:.2s}
+    .pre-footer .social a:hover{transform:scale(1.2)}
+    .payment-secure{text-align:center;margin-top:2rem;font-size:.95rem;color:#aaa}
+    .trust-badges{display:flex;justify-content:center;align-items:center;gap:2rem;margin-top:1rem;flex-wrap:nowrap}
+    .trust-badges img{height:48px}
+    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center}
+    footer a{color:#ff9100}
+    @media(max-width:992px){
+      .timeline-wrapper{position:relative;top:0}
+      .timeline{flex-direction:column;gap:2rem}
+      .step-detail,.step-detail.reverse{grid-template-columns:1fr;gap:3rem}
+      .step-detail::before{left:0;width:100%;height:4px;top:0}
+      .step-media{transform:none;max-width:100%}
+      .step-number{top:-10px;left:0}
+    }
+    @media(max-width:767px){
+      .hamburger{display:block}
+      .nav-links,.right{display:none}
+      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1rem;border-bottom:1px solid #222}
+      .hero h1{font-size:2.8rem}
+      .pre-footer .grid{grid-template-columns:1fr}
+      .trust-badges{gap:1rem;flex-wrap:wrap}
+    }
+    /* Snowflakes */
+    .snowflake{position:fixed;top:-20px;color:#fff;pointer-events:none;z-index:9999;animation:fall linear infinite}
+    .snowflake.small{font-size:0.8rem;opacity:0.7}
+    @keyframes fall{0%{transform:translateY(-10vh) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
+    .snowflake:nth-child(1){left:10%;animation-duration:14s;animation-delay:0s}
+    .snowflake:nth-child(2){left:25%;animation-duration:18s;animation-delay:2s}
+    .snowflake:nth-child(3){left:40%;animation-duration:12s;animation-delay:1s}
+    .snowflake:nth-child(4){left:55%;animation-duration:16s;animation-delay:4s}
+    .snowflake:nth-child(5){left:70%;animation-duration:15s;animation-delay:1.5s}
+    .snowflake:nth-child(6){left:85%;animation-duration:20s;animation-delay:3s}
+    .snowflake:nth-child(7){left:15%;animation-duration:17s;animation-delay:5s}
+    .snowflake:nth-child(8){left:65%;animation-duration:13s;animation-delay:0.5s}
+    .snowflake:nth-child(9){left:35%;animation-duration:19s;animation-delay:6s}
+    .snowflake:nth-child(10){left:80%;animation-duration:11s;animation-delay:7s}
+    .snowflake:nth-child(11){left:5%;animation-duration:16s;animation-delay:4.5s}
+    .snowflake:nth-child(12){left:90%;animation-duration:15s;animation-delay:8s}
+  </style>
+</head>
+<body>
+
+  <!-- Snowflakes -->
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="green-banner">
+      <div class="container">Adopt Before Christmas — Limited Litters! Message Us On <a href="https://wa.me/12495216417" target="_blank">WhatsApp</a></div>
+    </div>
+    <div class="nav-bar container">
+      <div class="logo">
+        <i class="fas fa-paw"></i>
+        PuppysPur
+        <span>Cute • Pet • Adoption • Haven • TX</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#available">Available Puppies</a>
+        <a href="index.html#promise">Our Promise</a>
+        <a href="index.html#about">About Us</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="right">
+        <a href="https://wa.me/12495216417" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now</a>
+      </div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO TITLE -->
+  <section class="hero">
+    <div class="overlay container">
+      <h1>The Puppys Pur Process</h1>
+      <p>From choosing your perfect Corgi to welcoming them home — here’s what to expect.</p>
+    </div>
+  </section>
+
+  <!-- STICKY TIMELINE - NO LINE -->
+  <div class="timeline-wrapper">
+    <div class="container timeline">
+      <div class="step" data-step="1">
+        <div class="step-circle">1</div>
+        <div class="step-title">Find Your Perfect Puppy</div>
+        <div class="step-desc">Browse our available Corgis and fall in love</div>
+      </div>
+      <div class="step" data-step="2">
+        <div class="step-circle">2</div>
+        <div class="step-title">Reserve & Secure</div>
+        <div class="step-desc">Place your deposit to hold your chosen puppy</div>
+      </div>
+      <div class="step" data-step="3">
+        <div class="step-circle">3</div>
+        <div class="step-title">Health & Readiness Check</div>
+        <div class="step-desc">Full vet exam, vaccines, microchip & health cert</div>
+      </div>
+      <div class="step" data-step="4">
+        <div class="step-circle">4</div>
+        <div class="step-title">Delivery Coordination & Arrival</div>
+        <div class="step-desc">Safe nationwide travel with nanny or drive</div>
+      </div>
+      <div class="step" data-step="5">
+        <div class="step-circle">5</div>
+        <div class="step-title">Lifetime Support</div>
+        <div class="step-desc">We’re here for you and your Corgi forever</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAILED STEPS -->
+  <section class="steps-detail">
+    <div class="container">
+      <!-- Step 1 -->
+      <div class="step-detail" id="step1">
+        <div class="step-media">
+          <video autoplay loop muted playsinline poster="HOW IT WORKS.jpg" preload="auto">
+            <source src="/VIDEO/how-it-works1`.mp4" type="video/mp4">
+            <source src="/VIDEO/how-it-works1`.mp4" type="video/webm">
+             Your browser does not support video.
+            </video> 
+        </div>
+        <div class="step-content">
+          <span class="step-number">1</span>
+          <h3>Find Your Perfect Puppy</h3>
+          <p>Browse our hand-selected Pembroke Welsh and rare Merle Corgis. View photos, videos, parents, and full details. Chat with us for extra pictures or video calls — we’ll help you find the one that matches your family’s energy and lifestyle.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-detail reverse" id="step2">
+        <div class="step-content">
+          <span class="step-number">2</span>
+          <h3>Reserve & Secure</h3>
+          <p>Once you’ve found “the one,” place a $500 deposit via secure payment. Your puppy is held exclusively for you. We accept PayPal, Venmo, Cash App, and Zelle — fast and safe.</p>
+        </div>
+        <div class="step-media">
+           <video autoplay loop muted playsinline poster="../../videos/princess.jpg" preload="auto">
+      <source src="/VIDEO/how-it-works2.mp4" type="video/mp4">
+      <source src="/VIDEO/how-it-works2.mp4" type="video/webm">
+      Your browser does not support video.
+    </video> 
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-detail" id="step3">
+        <div class="step-media">
+           <video autoplay loop muted playsinline poster="../../videos/princess.jpg" preload="auto">
+            <source src="/VIDEO/how-it-works3.mp4" type="video/mp4">
+            <source src="/VIDEO/how-it-works3.mp4" type="video/webm">
+             Your browser does not support video.
+         </video> 
+        </div>
+        <div class="step-content">
+          <span class="step-number">3</span>
+          <h3>Health & Readiness Check</h3>
+          <p>Every puppy gets age-appropriate vaccines, deworming (3x), microchip (pre-registered to you), and a full vet exam with health certificate. We only release puppies when they’re 100% ready.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-detail reverse" id="step4">
+        <div class="step-content">
+          <span class="step-number">4</span>
+          <h3>Delivery Coordination & Arrival</h3>
+          <p>We arrange safe nationwide travel — flight with nanny or personal drive delivery. You get tracking every step of the way. Your puppy arrives with starter pack: food, toy, and blanket with mom’s scent.</p>
+        </div>
+        <div class="step-media">
+          <video autoplay loop muted playsinline poster="../../videos/princess.jpg" preload="auto">
+            <source src="/VIDEO/how-it-works4.mp4" type="video/mp4">
+            <source src="/VIDEO/how-it-works4.mp4" type="video/webm">
+             Your browser does not support video.
+         </video> 
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step-detail" id="step5">
+        <div class="step-media">
+          <video autoplay loop muted playsinline poster="../../videos/princess.jpg" preload="auto">
+            <source src="/VIDEO/how-it-works5.mp4" type="video/mp4">
+              <source src="/VIDEO/how-it-works5.mp4" type="video/webm">
+                Your browser does not support video.
+            </video> 
+        </div>
+        <div class="step-content">
+          <span class="step-number">5</span>
+          <h3>Lifetime Support</h3>
+          <p>Welcome home! You get our 2-year health guarantee, lifetime breeder support, and a family that’s always here for questions, advice, or just to see how your Corgi is doing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE-FOOTER -->
+  <section class="pre-footer">
+    <div class="container grid">
+      <div>Over 92+ happy families since 2024. Your perfect puppy is waiting.</div>
+      <div><strong>Need help?</strong><br>Mon–Sat 9AM–7PM CST</div>
+      <div>
+        <strong>Follow us</strong>
+        <div class="social">
+          <a href="https://instagram.com/puppypur_official" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/puppypur" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://youtube.com/@puppypur" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://tiktok.com/@puppypur" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container payment-secure">
+      <p>We accept PayPal • Venmo • Cash App • Zelle</p>
+      <div class="trust-badges">
+        <img src="../badges/paypal.png" alt="PayPal">
+        <img src="../badges/venmo.png" alt="Venmo">
+        <img src="../badges/cashapp.png" alt="Cash App">
+        <img src="../badges/zelle.png" alt="Zelle">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2024 Puppy’s Pur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Highlight timeline on scroll
+    const steps = document.querySelectorAll('.step');
+    const stepDetails = document.querySelectorAll('.step-detail');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const stepNum = entry.target.id.replace('step', '');
+          steps.forEach(s => s.classList.remove('active'));
+          document.querySelector(`.step[data-step="${stepNum}"]`).classList.add('active');
+        }
+      });
+    }, {threshold: 0.5});
+
+    stepDetails.forEach(detail => observer.observe(detail));
+  </script>
+</body>
+</html>

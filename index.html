@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="PuppysPur – USDA-licensed, AKC-registered family Corgi breeder in Hillsboro, Texas. Pembroke Welsh & Merle Corgis. Health-tested, 2-year guarantee, nationwide delivery." />
+  <title>PuppysPur | AKC Corgi Breeder in Hillsboro, Texas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.5;scroll-behavior:smooth}
+    body{background:#000;overflow-x:hidden;position:relative}
+    a{color:#fff;text-decoration:none;transition:all .25s;display:block}
+    a:hover{color:#ff9100}
+    h1,h2,h3,h4,h5{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
+    .container{max-width:1240px;margin:auto;padding:0 1rem}
+    header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
+    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem}
+    .green-banner a{color:#fff;text-decoration:underline}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100}
+    .logo i{font-size:2.2rem;color:#ff9100}
+    .logo span{font-size:.85rem;color:#aaa;margin-left:.5rem}
+    .nav-links{display:flex;gap:2rem;font-size:.95rem;position:relative}
+    .nav-links a{color:#fff;font-weight:600;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ff9100;transition:width .3s}
+    .nav-links a:hover::after{width:100%}
+    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem}
+    .right a{color:#ff9100;font-weight:600;display:flex;align-items:center;gap:.4rem}
+    .hamburger{display:none;cursor:pointer;font-size:1.8rem;color:#fff}
+    .progress-bar{
+      position:sticky;top:calc(100vh - 4px);height:4px;background:#222;overflow:hidden;z-index:999;
+      transition:opacity .3s ease;opacity:1;
+    }
+    .progress-fill{
+      height:100%;background:linear-gradient(to right,#ff9100,#ffb84d);width:0%;transition:width .3s ease;
+      position:relative;
+    }
+    .progress-icon{
+      position:absolute;top:50%;left:0;transform:translate(-50%,-50%);font-size:1.2rem;color:#000;
+      transition:left .3s ease;animation:walk 1.5s steps(4) infinite;
+      filter:drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+    }
+    @keyframes walk{
+      0%{transform:translateX(0) translateY(-50%) rotate(0deg)}
+      25%{transform:translateX(0) translateY(-50%) rotate(5deg)}
+      50%{transform:translateX(0) translateY(-50%) rotate(0deg)}
+      75%{transform:translateX(0) translateY(-50%) rotate(-5deg)}
+      100%{transform:translateX(0) translateY(-50%) rotate(0deg)}
+    }
+    .hero{position:relative;height:80vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+    .hero .overlay{position:relative;z-index:1}
+    .hero h1{font-size:4rem;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+    .hero p{font-size:1.3rem;color:#ddd;margin:1rem 0}
+    .hero .btn{background:#ff9100;color:#000;padding:1rem 2.8rem;border-radius:50px;font-weight:700;font-size:1.1rem}
+    .hero .btn:hover{background:#ffb84d;transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,145,0,.4)}
+    .trustpilot{margin-top:1.5rem;display:flex;align-items:center;gap:0.4rem;justify-content:center;flex-wrap:nowrap}
+    /* ANIMATED COUNTER */
+    #counter{padding:5rem 0;background:#111}
+    .counter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:center}
+    .counter-item{background:#222;padding:2.5rem 1.5rem;border-radius:16px}
+    .counter-number{color:#ff9100;font-size:4.5rem;font-weight:800;margin-bottom:.5rem;line-height:1}
+    .counter-label{font-size:1.1rem;color:#ccc}
+    section{padding:4.5rem 0}
+    .bg-dark{background:#111}
+    .scroll-wrapper{overflow:hidden;position:relative;padding:1rem 0}
+    .scroll-container{display:flex;transition:transform .5s ease;gap:1.2rem;padding:0 1rem}
+    .scroll-controls{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none;z-index:10}
+    .scroll-controls button{
+      background:#ff9100;color:#000;border:none;width:44px;height:44px;border-radius:50%;font-size:1.4rem;
+      cursor:pointer;pointer-events:all;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.4)
+    }
+    .scroll-controls button:hover{background:#ffb84d}
+    .puppies-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;padding:0 1rem;
+      justify-items:center;
+    }
+    @media(max-width:992px){
+      .puppies-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;}
+    }
+    @media(max-width:767px){
+      .puppies-grid{grid-template-columns:repeat(2,1fr);gap:1rem;padding:0 .5rem;}
+    }
+    .breed-slide{
+      background:#222;border-radius:16px;overflow:hidden;position:relative;transition:all .35s cubic-bezier(0.25,0.8,0.25,1);cursor:pointer;
+      transform:scale(1);box-shadow:0 6px 16px rgba(0,0,0,0.25);max-width:280px;width:100%;
+    }
+    .breed-slide:hover,.breed-slide.touched{
+      transform:scale(1.04);box-shadow:0 18px 36px rgba(255,145,0,0.2),0 0 28px rgba(255,145,0,0.15);z-index:5
+    }
+    .breed-slide img{width:100%;height:200px;object-fit:cover;transition:.3s}
+    .breed-slide:hover img{transform:scale(1.05)}
+    .breed-slide .puppy-info{padding:1rem;text-align:center}
+    .breed-slide .puppy-info h3{font-size:1.15rem;color:#fff;margin-bottom:.2rem;font-family:'Nunito',sans-serif}
+    .breed-slide .puppy-info p{font-size:.85rem;color:#ccc;line-height:1.4}
+    .heart-icon{
+      position:absolute;top:10px;right:10px;background:#fff;color:#ff9100;padding:5px;border-radius:50%;
+      font-size:1rem;cursor:pointer;transition:all .2s ease;z-index:10
+    }
+    .heart-icon:hover,.heart-icon.touched{
+      background:#ff9100;color:#fff;transform:scale(1.3) rotate(15deg);animation:pulse .6s ease
+    }
+    @keyframes pulse{
+      0%{transform:scale(1.3) rotate(15deg)}50%{transform:scale(1.5) rotate(20deg)}100%{transform:scale(1.3) rotate(15deg)}
+    }
+    .paw-bubble{
+      position:absolute;bottom:0;left:50%;transform:translateX(-50%) translateY(0) scale(0);opacity:0;
+      width:24px;height:24px;background:#ff9100;border-radius:50%;pointer-events:none;z-index:15;
+      animation:bubble 1.2s ease-out forwards;
+    }
+    @keyframes bubble{
+      0%{transform:translateX(-50%) translateY(0) scale(0);opacity:1;}
+      20%{opacity:1;}
+      100%{transform:translateX(calc(-50% + var(--x-offset,0px))) translateY(-120px) scale(1);opacity:0;}
+    }
+    .puppy-card{
+      background:#222;border-radius:16px;overflow:hidden;
+      position:relative;transition:all .35s cubic-bezier(0.25,0.8,0.25,1);cursor:pointer;
+      transform:scale(1);box-shadow:0 6px 16px rgba(0,0,0,0.25);max-width:280px;width:100%;
+    }
+    .puppy-card:hover,.puppy-card.touched{
+      transform:scale(1.04);box-shadow:0 18px 36px rgba(255,145,0,0.2),0 0 28px rgba(255,145,0,0.15);z-index:5
+    }
+    .puppy-card img{width:100%;height:200px;object-fit:cover;transition:.3s}
+    .puppy-card:hover img{transform:scale(1.05)}
+    .puppy-info{padding:1rem;text-align:center}
+    .puppy-info h3{font-size:1.15rem;color:#fff;margin-bottom:.2rem;font-family:'Nunito',sans-serif}
+    .puppy-info p{font-size:.85rem;color:#ccc;line-height:1.4}
+    .testimonials-section{padding:4rem 0;background:#111;position:relative;overflow:hidden}
+    .testimonials-header{display:flex;gap:3rem;align-items:start;max-width:1240px;margin:auto;flex-wrap:wrap}
+    .testimonials-header .left{flex:1;min-width:280px;text-align:center}
+    .testimonials-header .left h2{font-size:2.3rem;color:#fff;margin-bottom:.5rem}
+    .testimonials-header .left .verified{color:#66bb6a;font-size:1rem;display:flex;align-items:center;gap:.3rem;margin:.5rem 0;justify-content:center}
+    .testimonials-header .left .verified i{color:#66bb6a}
+    .testimonials-header .left p{font-size:1rem;color:#ccc;line-height:1.6;margin-bottom:1.5rem}
+    .testimonials-header .left .read-all a{background:#fff;color:#000;padding:.8rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem}
+    .testimonials-wrapper{flex:2;min-width:300px;overflow:hidden;position:relative}
+    .testimonials-container{display:flex;transition:transform .5s ease;gap:1.5rem;padding:0 1rem}
+    .testimonial-slide{
+      flex:0 0 calc(85% - 1rem);max-width:360px;background:#222;border-radius:14px;overflow:hidden;
+      transition:all .3s ease;cursor:pointer;transform:translateY(0);
+      box-shadow:0 4px 12px rgba(0,0,0,0.2)
+    }
+    .testimonial-slide:hover,.testimonial-slide.touched{
+      transform:translateY(-8px);
+      box-shadow:0 16px 32px rgba(255,145,0,0.15),0 0 20px rgba(255,145,0,0.1);
+      border:1px solid rgba(255,145,0,0.3)
+    }
+    .testimonial-slide img{width:100%;height:170px;object-fit:cover}
+    .testimonial-content{padding:1.4rem}
+    .testimonial-content .stars{font-size:1rem;color:#00b67a;margin-bottom:.8rem;display:flex;gap:2px}
+    .testimonial-content p{font-size:.93rem;color:#ddd;line-height:1.6;margin-bottom:1rem}
+    .testimonial-content .author{color:#66bb6a;font-size:.88rem;display:flex;align-items:center;gap:.3rem}
+    .testimonial-content .author i{color:#66bb6a}
+    .testimonial-content .date{color:#888;font-size:.83rem;margin-bottom:.5rem}
+    .about-section,.promise-section{padding:4rem 0;background:#111;text-align:center}
+    .about-section h2,.promise-section h2{font-size:2.3rem;color:#ff9100;margin-bottom:1rem}
+    .about-section p,.promise-section p{font-size:1rem;color:#ccc;max-width:800px;margin:auto;line-height:1.7}
+    .contact-section{background:#111;padding:5rem 0;text-align:center;position:relative}
+    .contact-header h2{font-size:2.5rem;color:#fff;margin-bottom:.5rem}
+    .contact-header p{font-size:1.1rem;color:#ccc;margin-bottom:3rem;max-width:700px;margin:auto}
+    /* NEW CONTACT CARDS - BALANCED & CLEAN */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+      gap:3rem;
+      max-width:1000px;
+      margin:auto;
+    }
+    .contact-card{
+      background:#222;
+      padding:2.5rem;
+      border-radius:20px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      min-height:380px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .contact-card::before{
+      content:'';
+      position:absolute;
+      top:0;left:0;
+      width:100%;
+      height:4px;
+      background:#ff9100;
+    }
+    .contact-card h3{
+      font-size:1.8rem;
+      color:#fff;
+      margin-bottom:1rem;
+    }
+    .contact-card p{
+      font-size:1.1rem;
+      color:#ccc;
+      line-height:1.7;
+      margin-bottom:2rem;
+    }
+    .contact-card .btn{
+      background:#25D366;
+      color:#fff;
+      padding:1rem 2.5rem;
+      border-radius:50px;
+      font-weight:700;
+      font-size:1.1rem;
+      display:inline-flex;
+      align-items:center;
+      gap:.6rem;
+      margin:1rem auto;
+    }
+    .contact-card .btn.email{
+      background:#ff9100;
+      color:#000;
+    }
+    .contact-card .phone{
+      font-size:1.3rem;
+      color:#ff9100;
+      font-weight:600;
+      margin:1.5rem 0;
+    }
+    .contact-card .hours{
+      color:#aaa;
+      font-size:1rem;
+    }
+    .pre-footer{background:#111;padding:3rem 0;border-top:1px solid #222}
+    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;text-align:center}
+    .pre-footer .social{display:flex;justify-content:center;align-items:center;gap:1rem;}
+    .pre-footer .social a{font-size:1.6rem;color:#ff9100;transition:.2s;margin:0;}
+    .pre-footer .social a:hover{transform:scale(1.2)}
+    .payment-secure{text-align:center;margin-top:2rem;font-size:.95rem;color:#aaa}
+    .trust-badges{display:flex;justify-content:center;align-items:center;gap:1.5rem;margin-top:1rem;flex-wrap:nowrap}
+    .trust-badges img{height:48px}
+    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center}
+    footer a{color:#ff9100}
+    /* DROPDOWN FOR HOW IT WORKS */
+    .dropdown{position:relative}
+    .dropdown:hover .dropdown-content{display:block}
+    .dropdown-content{
+      display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#111;
+      min-width:220px;border-radius:8px;box-shadow:0 8px 20px rgba(255,145,0,.2);padding:1rem 0;
+      z-index:1000;border:1px solid #ff9100
+    }
+    .dropdown-content a{
+      padding:.8rem 1.5rem;display:block;font-weight:600;transition:.3s
+    }
+    .dropdown-content a:hover{background:#222;color:#ff9100}
+    /* Mobile dropdown */
+    @media(max-width:767px){
+      .dropdown:hover .dropdown-content{display:none}
+      .dropdown.active .dropdown-content{display:block;position:static;transform:none;box-shadow:none;border:none;background:#000}
+    }
+    /* Beautiful falling snowflake icons */
+    .snowflake{
+      position:fixed;
+      top:-20px;
+      color:#fff;
+      pointer-events:none;
+      z-index:9999;
+      animation:fall linear infinite;
+    }
+    .snowflake.small{font-size:0.8rem;opacity:0.7}
+    @keyframes fall{
+      0%{transform:translateY(-10vh) rotate(0deg)}
+      100%{transform:translateY(110vh) rotate(360deg)}
+    }
+    .snowflake:nth-child(1){left:10%;animation-duration:14s;animation-delay:0s}
+    .snowflake:nth-child(2){left:25%;animation-duration:18s;animation-delay:2s}
+    .snowflake:nth-child(3){left:40%;animation-duration:12s;animation-delay:1s}
+    .snowflake:nth-child(4){left:55%;animation-duration:16s;animation-delay:4s}
+    .snowflake:nth-child(5){left:70%;animation-duration:15s;animation-delay:1.5s}
+    .snowflake:nth-child(6){left:85%;animation-duration:20s;animation-delay:3s}
+    .snowflake:nth-child(7){left:15%;animation-duration:17s;animation-delay:5s}
+    .snowflake:nth-child(8){left:65%;animation-duration:13s;animation-delay:0.5s}
+    .snowflake:nth-child(9){left:35%;animation-duration:19s;animation-delay:6s}
+    .snowflake:nth-child(10){left:80%;animation-duration:11s;animation-delay:7s}
+    .snowflake:nth-child(11){left:5%;animation-duration:16s;animation-delay:4.5s}
+    .snowflake:nth-child(12){left:90%;animation-duration:15s;animation-delay:8s}
+    @media(max-width:992px){
+      .testimonials-header{flex-direction:column;align-items:center}
+      .testimonials-header .left{text-align:center}
+      .testimonials-wrapper{flex:none;width:100%}
+      .testimonial-slide{flex:0 0 calc(80% - 1rem)}
+      .contact-grid{grid-template-columns:1fr}
+      .progress-bar{top:calc(100% + 1px);}
+    }
+    @media(max-width:767px){
+      .hamburger{display:block}
+      .nav-links,.right{display:none}
+      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1rem;border-bottom:1px solid #222}
+      .hero h1{font-size:2.8rem}
+      .trustpilot{gap:0.3rem}
+      .progress-icon{font-size:1rem;}
+      .pre-footer .grid{grid-template-columns:1fr}
+      .trust-badges{gap:1rem;flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <!-- Beautiful falling snowflake icons -->
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
+  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <!-- HEADER -->
+  <header>
+    <div class="green-banner">
+      <div class="container">Adopt Before Christmas — Limited Litters! Message Us On <a href="https://wa.me/12495216417" target="_blank">WhatsApp</a></div>
+    </div>
+    <div class="nav-bar container">
+      <div class="logo">
+        <i class="fas fa-paw"></i>
+        PuppysPur
+        <span>Cute • Pet • Adoption • Haven • TX</span>
+      </div>
+      <div class="nav-links">
+        <a href="#available">Available Puppies</a>
+        <a href="#promise">Our Promise</a>
+        <a href="#about">About Us</a>
+        <div class="dropdown">
+          <a href="how-it-works.html">How It Works</a>
+          <div class="dropdown-content">
+            <a href="how-it-works.html">How It Works</a>
+            <a href="puppies-health.html">Puppies Health Care</a>
+            <a href="puppies-guarantee.html">Puppies Guarantee</a>
+            <a href="terms.html">Terms of Sales</a>
+            <a href="/breeders/breeder.html">Breeders</a>
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="right">
+        <a href="https://wa.me/12495216417" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now</a>
+      </div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill">
+        <i class="fas fa-paw progress-icon"></i>
+      </div>
+    </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay loop muted playsinline poster="VIDEO/hero-poster.jpg">
+      <source src="VIDEO/merle.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <div class="overlay container">
+      <h1>AKC Corgis Raised With Love</h1>
+      <p>USDA-licensed • Health-tested parents • 2-year guarantee • Nationwide delivery</p>
+      <a href="#available" class="btn">View Available Corgis</a>
+      <div class="trustpilot">
+        <svg width="105" height="26" viewBox="0 0 135 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.763 0L8.0809 8.06432L0 8.60227L6.43018 14.1199L4.83636 22.3977L11.763 18.0761L18.6896 22.3977L17.0958 14.1199L23.526 8.60227L15.4451 8.06432L11.763 0Z" fill="#00B67A"/>
+          <text x="30" y="19" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold">Trustpilot</text>
+        </svg>
+        <img src="https://cdn.trustpilot.net/brand-assets/4.2.0/stars/stars-4.5.svg" alt="4.5 stars" style="height:32px;">
+        <span style="color:#ccc;font-weight:500;font-size:1.1rem;margin-left:6px;">91+ reviews</span>
+      </div>
+    </div>
+  </section>
+  <!-- ANIMATED COUNTER -->
+  <section id="counter">
+    <div class="container">
+      <div class="counter-grid">
+        <div class="counter-item">
+          <div class="counter-number" data-target="9">0+</div>
+          <div class="counter-label">Years of Breeding</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="92">0+</div>
+          <div class="counter-label">Happy Families</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="73">0</div>
+          <div class="counter-label">Current Available Puppies</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-number" data-target="100">0%</div>
+          <div class="counter-label">Health Guarantee Coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AVAILABLE MERLE CORGIS -->
+  <section id="available" class="breeds-section">
+    <div class="container">
+      <h2 style="text-align:center;color:#ff9100;margin-bottom:1rem">Available Merle Pembroke Corgis</h2>
+      <p style="text-align:center;color:#ccc;margin-bottom:1.8rem">Discover our rare and stunning blue merle and Double merle Pembroke Welsh Corgis – each one uniquely beautiful with marbled coats and captivating eyes. Raised with love in our family home, these intelligent and affectionate pups come health-tested, vet-checked, and ready to become your loyal companion. Nationwide delivery available.</p>
+      <div class="puppies-grid" id="breeds">
+
+        <a href="/Merle Corgi Profilee/blue.html" class="breed-slide"><img src="/Merle Corgi Profilee/atlas,benji, bluee,bodhi/blue.jpg" alt="Blue"><div class="puppy-info"><h3>Blue</h3><p>Double Merle Male</p><br><p style="color: #ff9100;"><strong>$1100</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Merle Corgi Profilee/albert.html" class="breed-slide"><img src="/Merle Corgi Profilee/arthas,albert,archer,archie/albert.jpg" alt="Albert"><div class="puppy-info"><h3>Albert</h3><p>Blue Merle Male</p><br><p style="color: #ff9100;"><strong>$1300</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Merle Corgi Profilee/archer.html" class="breed-slide"><img src="/Merle Corgi Profilee/arthas,albert,archer,archie/archer.jpg" alt="Archer"><div class="puppy-info"><h3>Archer</h3><p>Blue Merle Female</p><br><p style="color: #ff9100;"><strong>$1300</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Merle Corgi Profilee/archie.html" class="breed-slide"><img src="/Merle Corgi Profilee/arthas,albert,archer,archie/archie.jpg" alt="Archie"><div class="puppy-info"><h3>Archie</h3><p>Blue Merle Male</p><br><p style="color: #ff9100;"><strong>$1300</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Merle Corgi Profilee/benji.html" class="breed-slide"><img src="/Merle Corgi Profilee/atlas,benji, bluee,bodhi/benji.jpg" alt="Benji"><div class="puppy-info"><h3>Benji</h3><p>Blue Merle Male</p><br><p style="color: #ff9100;"><strong>$1100</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+        
+        <a href="/Merle Corgi Profilee/atlas.html" class="breed-slide"><img src="/Merle Corgi Profilee/atlas,benji, bluee,bodhi/atlas.jpg" alt="Atlas"><div class="puppy-info"><h3>Atlas</h3><p>Double Merle Male</p><br><p style="color: #ff9100;"><strong>$1100</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+        
+        <a href="/Merle Corgi Profilee/bodhi.html" class="breed-slide"><img src="/Merle Corgi Profilee/atlas,benji, bluee,bodhi/bodhi.jpg" alt="Bodhi"><div class="puppy-info"><h3>Bodhi</h3><p>Double Merle Female</p><br><p style="color: #ff9100;"><strong>$1100</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Merle Corgi Profilee/arthas.html" class="breed-slide"><img src="/Merle Corgi Profilee/arthas,albert,archer,archie/artlas.jpg" alt="Arthas"><div class="puppy-info"><h3>Arthas</h3><p>Red Merle Male</p><br><p style="color: #ff9100;"><strong>$1300</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+      </div>
+    </div>
+  </section>
+  <!-- SPOTLIGHT - WELSH PEMBROKE CORGIS -->
+  <section class="spotlight-section">
+    <div class="container">
+      <h2 style="text-align:center;color:#ff9100;margin-bottom:2rem">Available Welsh Pembroke Corgi</h2>
+      <p style="text-align:center;color:#ccc;margin-bottom:1.8rem">Meet our adorable classic Pembroke Welsh Corgis in traditional sable, tri-color, and red coats. These playful, smart, and affectionate short-legged companions are raised in our family home with children and lots of love. Health-tested parents, 2-year guarantee, and safe nationwide delivery.</p>
+      <div class="puppies-grid" id="spotlight">
+        <a href="/Welsh Corgi/countess.html" class="puppy-card"><img src="/Welsh Corgi/countess/countess1.jpg" alt="Countess"><div class="puppy-info"><h3>Countess</h3><p>Sable • Female</p><br><p style="color: #ff9100;"><strong>$750</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/grace.html" class="puppy-card"><img src="/Welsh Corgi/grace,will,karen, jack/grace.jpg" alt="Grace"><div class="puppy-info"><h3>Grace</h3><p>Sable • Female</p><br><p style="color: #ff9100;"><strong>$950</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/stitch.html" class="puppy-card"><img src="/Welsh Corgi/stitch/stitch.jpg" alt="Stitch"><div class="puppy-info"><h3>Stitch</h3><p>Tri-Color • Male</p><br><p style="color: #ff9100;"><strong>$975</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/duchess.html" class="puppy-card"><img src="/Welsh Corgi/duchess/duchess1.jpg" alt="Duchess"><div class="puppy-info"><h3>Duchess</h3><p>Tri-Color • Female</p><br><p style="color: #ff9100;"><strong>$750</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/will.html" class="puppy-card"><img src="/Welsh Corgi/grace,will,karen, jack/will.jpg" alt="Will"><div class="puppy-info"><h3>Will</h3><p>Sable • Male</p><br><p style="color: #ff9100;"><strong>$950</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/hank.html" class="puppy-card"><img src="/Welsh Corgi/hank/hank2.jpg" alt="Hank"><div class="puppy-info"><h3>Hank</h3><p>Tri-Color • Male</p><br><p style="color: #ff9100;"><strong>$850</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/karen.html" class="puppy-card"><img src="/Welsh Corgi/grace,will,karen, jack/karen.jpg" alt="Karen"><div class="puppy-info"><h3>Karen</h3><p>Sable • Female</p><br><p style="color: #ff9100;"><strong>$950</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/sir.html" class="puppy-card"><img src="/Welsh Corgi/sir/sir,stitch.jpg" alt="Sir"><div class="puppy-info"><h3>Sir</h3><p>Tri-Color • Male</p><br><p style="color: #ff9100;"><strong>$950</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/queen.html" class="puppy-card"><img src="/Welsh Corgi/queen/queen.jpg" alt="Queen"><div class="puppy-info"><h3>Queen</h3><p>Tri-Color • Female</p><br><p style="color: #ff9100;"><strong>$950</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/princess.html" class="puppy-card"><img src="/Welsh Corgi/princess/princess,sir,stitch.jpg" alt="Princess"><div class="puppy-info"><h3>Princess</h3><p>Tri-Color • Female</p><br><p style="color: #ff9100;"><strong>$950</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/jango.html" class="puppy-card"><img src="/Welsh Corgi/jango/jango1.jpg" alt="Jango"><div class="puppy-info"><h3>Jango</h3><p>Tri-Color • Male</p><br><p style="color: #ff9100;"><strong>$850</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/jim.html" class="puppy-card"><img src="/Welsh Corgi/jim/Jim1.jpg" alt="Jim"><div class="puppy-info"><h3>Jim</h3><p>Tri-Color Female</p><br><p style="color: #ff9100;"><strong>$850</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/lord.html" class="puppy-card"><img src="/Welsh Corgi/lord,marlee,mavis,max/lord.jpg" alt="Lord"><div class="puppy-info"><h3>Lord</h3><p>Sable • Male</p><br><p style="color: #ff9100;"><strong>$850</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/marlee.html" class="puppy-card"><img src="/Welsh Corgi/lord,marlee,mavis,max/marlee.jpg" alt="Marlee"><div class="puppy-info"><h3>Marlee</h3><p>Sable • Female</p><br><p style="color: #ff9100;"><strong>$850</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/jack.html" class="puppy-card"><img src="/Welsh Corgi/grace,will,karen, jack/jack.jpg" alt="Jack"><div class="puppy-info"><h3>Jack</h3><p>Sable • Male</p><br><p style="color: #ff9100;"><strong>$950</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/max.html" class="puppy-card"><img src="/Welsh Corgi/lord,marlee,mavis,max/max.jpg" alt="Max"><div class="puppy-info"><h3>Max</h3><p>Sable • Male</p><br><p style="color: #ff9100;"><strong>$850</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/holly.html" class="puppy-card"><img src="/Welsh Corgi/stitch/Holly.jpg" alt="Holly"><div class="puppy-info"><h3>Holly</h3><p>Sable • Female</p><br><div style="color: #ff9100;"><strong>$975</strong></div><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/marcus.html" class="puppy-card"><img src="/Welsh Corgi/stitch/marcus.jpg" alt="Marcus"><div class="puppy-info"><h3>Marcus</h3><p>Tri-Color • Female</p><br><p style="color: #ff9100;"><strong>$975</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/mavis.html" class="puppy-card"><img src="/Welsh Corgi/lord,marlee,mavis,max/mavis1.jpg" alt="Mavis"><div class="puppy-info"><h3>Mavis</h3><p>Sable • Female</p><br><p style="color: #ff9100;"><strong>$850</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+
+        <a href="/Welsh Corgi/duke.html" class="puppy-card"><img src="/Welsh Corgi/duke/duke1.jpg" alt="Duke"><div class="puppy-info"><h3>Duke</h3><p>Tri-Color • Male</p><br><p style="color: #ff9100;"><strong>$750</strong></p><i class="fas fa-heart heart-icon"></i></div></a>
+    
+      </div>
+    </div>
+  </section>
+  <!-- ABOUT US -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About Puppy Pur</h2>
+      <img src="about/corgi-family.jpg" alt="Our Corgi Family" style="max-width:100%;border-radius:16px;margin:2rem 0;">
+      <p>Family-owned in Hillsboro, Texas (USDA #74-A-2468), we’ve been raising happy, healthy Pembroke Welsh Corgis and rare Merle Corgis since 2014. Every puppy is born and raised in our home — never cages, never kennels. Parents are AKC-registered, OFA health-tested, and DNA-clear. We offer a full 2-year health guarantee, microchip, up-to-date shots, deworming, and lifetime breeder support. Over 91+ happy families nationwide have welcomed a Puppy Pur Corgi into their lives. We ship safely coast-to-coast with a nanny or drive delivery available. Your perfect short-legged best friend is waiting!</p>
+    </div>
+  </section>
+  <!-- OUR PROMISE - NEW BEAUTIFUL VERSION WITH BOXES -->
+  <section id="promise" class="promise-section">
+    <div class="container">
+      <h2>Our Promise to You</h2>
+      <p style="font-size:1.2rem;color:#ddd;max-width:900px;margin:2rem auto;line-height:1.8;">
+        Every Puppy Pur Corgi is more than a pet, they’re a lifelong companion raised with love in our Texas family home. We stand behind every puppy with confidence because we’ve been doing this the right way since 2014.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem;">
+        <div style="text-align:center;background:#222;padding:2rem;border-radius:16px;">
+          <i class="fas fa-shield-alt" style="font-size:3rem;color:#66bb6a;margin-bottom:1rem;"></i>
+          <h3 style="color:#ff9100;margin-bottom:.5rem;">2-Year Health Guarantee</h3>
+          <p style="color:#ccc;">Covers congenital & hereditary conditions — your puppy starts life with full protection.</p>
+        </div>
+        <div style="text-align:center;background:#222;padding:2rem;border-radius:16px;">
+          <i class="fas fa-certificate" style="font-size:3rem;color:#66bb6a;margin-bottom:1rem;"></i>
+          <h3 style="color:#ff9100;margin-bottom:.5rem;">AKC Registration Papers</h3>
+          <p style="color:#ccc;">Purebred Pembroke Welsh Corgi lineage — paperwork included for every puppy.</p>
+        </div>
+        <div style="text-align:center;background:#222;padding:2rem;border-radius:16px;">
+          <i class="fas fa-microchip" style="font-size:3rem;color:#66bb6a;margin-bottom:1rem;"></i>
+          <h3 style="color:#ff9100;margin-bottom:.5rem;">Pre-Registered Microchip</h3>
+          <p style="color:#ccc;">Implanted and registered to you before they go home — safety first.</p>
+        </div>
+        <div style="text-align:center;background:#222;padding:2rem;border-radius:16px;">
+          <i class="fas fa-heart" style="font-size:3rem;color:#66bb6a;margin-bottom:1rem;"></i>
+          <h3 style="color:#ff9100;margin-bottom:.5rem;">Lifetime Breeder Support</h3>
+          <p style="color:#ccc;">We’re family for life, call, text, or message us anytime with questions, advice, or just to share photos.</p>
+        </div>
+      </div>
+      <p style="margin-top:3rem;font-size:1.1rem;color:#aaa;text-align:center;">
+        <strong>Over 92+ happy families nationwide trust Puppy Pur.</strong> Your perfect short-legged best friend deserves the very best start, and that’s our promise.
+      </p>
+    </div>
+  </section>
+  <!-- TESTIMONIALS – ALL 12 FULL REVIEWS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="left">
+          <h2>Real Families, Real Stories</h2>
+          <p class="verified"><i class="fas fa-check-circle"></i> Verified Puppy Parents</p>
+          <p>Over 92+ families trust us. Minor delays happen — we’re honest about it.</p>
+          <a href="/reviews" class="read-all">Read All Reviews</a>
+        </div>
+      </div>
+      <div class="scroll-wrapper">
+  <div class="scroll-container" id="testimonials">
+
+    <div class="testimonial-slide">
+      <img src="/Welsh Corgi/ein, jango, jim,hank/ein review.jpg" alt="Ein with his new family">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>“Ein is the smartest, coolest corgi ever! Already learning tricks and hacking his way into our hearts. Thank you Puppy’s Pur!”</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Sophia & Family — Austin, TX</p>
+        <p class="date">Sep 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 1 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review2.jpg" alt="Emma R.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Our little Merle girl arrived full of energy and curiosity. The whole process with PuppysPur was smooth from start to finish,clear updates and fast replies on WhatsApp. She's already ruling the house!</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Emma R., Colorado</p>
+        <p class="date">Jan 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review1.jpg" alt="Liam T.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Got a classic Pembroke boy — he's smart, playful, and already learned sit in two days. Puppy Pur kept us in the loop the entire time. Worth every penny.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Liam T., Oregon</p>
+        <p class="date">Jan 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 3 - Doubt #1 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review14.jpg" alt="Sophia M.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <p>I was unsure at first because there’s no phone support, only WhatsApp and email,but the team responded so fast and sent extra videos of our Merle pup. He arrived healthy and happy. Totally won me over.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Sophia M., Florida</p>
+        <p class="date">Feb 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review4.jpg" alt="Noah K.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Our Pembroke Corgi is the sweetest, already follows us everywhere. PuppysPur made everything easy and stress-free. Delivery was right on time.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Noah K., Georgia</p>
+        <p class="date">Feb 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 5 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review6.jpg" alt="Olivia P.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>The blue merle coat on our boy is stunning, gets compliments everywhere. PuppysPur was great about sending updates and health records. Very happy family here!</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Olivia P., Arizona</p>
+        <p class="date">Mar 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 6 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review5.jpg" alt="James H.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Our Pembroke girl settled in on day one, so affectionate and smart. Puppy Pur handled everything professionally. Couldn’t ask for better.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> James H., Michigan</p>
+        <p class="date">Mar 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 7 - Doubt #2 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review7.jpg" alt="Ava L.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>At first I missed having a phone number to call, but WhatsApp chats with PuppysPur were instant and helpful, even sent extra photos of our Merle pup. He’s perfect and healthy. No complaints!</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Ava L., Nevada</p>
+        <p class="date">Apr 2024</p>
+      </div>
+    </div>
+
+    <!-- Review 8 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review13.jpg" alt="William S.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Our Pembroke Corgi has the best personality, playful but calm when needed. PuppysPur made the whole adoption smooth and worry-free.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> William S., Ohio</p>
+        <p class="date">Apr 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 9 -->
+    <div class="testimonial-slide">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Merle boy with the most beautiful eyes, he’s already part of the family. PuppysPur was amazing from start to finish.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Isabella C., Illinois</p>
+        <p class="date">May 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 10 -->
+    <div class="testimonial-slide">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Pembroke pup arrived clean, happy, and healthy. PuppysPur kept us updated every step. Highly recommend!</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Benjamin F., Pennsylvania</p>
+        <p class="date">May 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 11 - Doubt #3 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review11.jpg" alt="Charlotte B.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>I wondered why there was no phone line, but WhatsApp worked even better, quick replies and videos of our Merle girl daily. She's everything we hoped for and more. Great experience!</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Charlotte B., Washington</p>
+        <p class="date">Jun 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 12 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review12.jpg" alt="Lucas G.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Our Pembroke boy is the smartest little guy — already knows his name. Puppy Pur made the process so easy.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Lucas G., Virginia</p>
+        <p class="date">Jun 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 13 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review8.jpg" alt="Amelia D.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Merle coat is even more gorgeous in person. Puppy Pur was professional and caring throughout — our girl is healthy and full of love.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Amelia D., North Carolina</p>
+        <p class="date">Jul 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 14 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review14.jpg" alt="Henry W.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Pembroke pup settled in fast, loves kids and other dogs. Puppy Pur delivered exactly what they promised.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Henry W., Tennessee</p>
+        <p class="date">Jul 2024</p>
+      </div>
+    </div>
+
+    <!-- Review 15 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review15.jpg" alt="Harper E.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Our Merle boy has the sweetest personality. Puppy Pur made us feel supported the whole way, highly recommend!</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Harper E., Missouri</p>
+        <p class="date">Aug 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 16 -->
+    <div class="testimonial-slide">
+      <img src="reviews/review16.jpg" alt="Ethan R.">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>OK, Our merle girl is everything we wanted, playful, smart, and loving. just that you guys didn't warn me about the slippers chewing part, lol half of my new shoes are gone... lol but PuppysPur was great to work with.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Ethan R., Kentucky</p>
+        <p class="date">Aug 2025</p>
+      </div>
+    </div>
+
+    <!-- Review 17 -->
+    <div class="testimonial-slide">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Merle pup's coat is stunninggets compliments daily. Puppy Pur kept everything smooth and clear.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Abigail N., Indiana</p>
+        <p class="date">Sep 2024</p>
+      </div>
+    </div>
+
+    <!-- Review 19 -->
+    <div class="testimonial-slide">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>B.e.s.t Gift Ever, Thanks PuppysPur!</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Grace P., Wisconsin</p>
+        <p class="date">Oct 2024</p>
+      </div>
+    </div>
+
+    <!-- Review 20 -->
+    <div class="testimonial-slide">
+      <div class="testimonial-content">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>Pembroke pup is full of personality, loves to play and cuddle. Puppy Pur delivered everything perfectly.</p>
+        <p class="author"><i class="fas fa-check-circle"></i> Jack Q., Minnesota</p>
+        <p class="date">Nov 2024</p>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-controls">
+    <button id="prev"><i class="fas fa-chevron-left"></i></button>
+    <button id="next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</div>
+    </div>
+  </section>
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-header">
+        <h2>Let's Bring Your Corgi Home</h2>
+        <p>Family-run in Texas — we answer every call, text, and email personally. Extra photos, videos, and honest advice, always.</p>
+      </div>
+      <div class="contact-grid">
+        <!-- New Puppy Parents -->
+        <div class="contact-card">
+          <h3>New Puppy Parents</h3>
+          <p>Ready for your perfect corgi? We’ll help you choose the one that fits your family — personality, color, energy, everything.</p>
+          <a href="https://wa.me/12495216417" target="_blank" class="btn" style="background:#25D366;color:#fff;display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2.5rem;border-radius:50px;font-weight:700;margin:1rem 0;">
+            <i class="fab fa-whatsapp"></i> Message Us on WhatsApp
+          </a>
+          
+          <div class="hours" style="color:#aaa;font-size:1rem;">
+            Mon–Sat: 9AM–7PM CST<br>
+            Saturday: 10AM–5PM CST
+          </div>
+        </div>
+        <!-- Current Puppy Parents -->
+        <div class="contact-card">
+          <h3>Current Puppy Parents</h3>
+          <p>Already reserved? We’re here for updates, tracking, health questions, or just to share the latest cute photos.</p>
+          <a href="mailto:puppypurfamily@gmail.com" class="btn email" style="background:#ff9100;color:#000;display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2.5rem;border-radius:50px;font-weight:700;margin:1rem 0;">
+            <i class="fas fa-envelope"></i> Email Us
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PRE-FOOTER -->
+  <section class="pre-footer">
+    <div class="container grid">
+      <div>Over 92+ happy families since 2024. Your Purfect puppy is waiting.</div>
+      <div><strong>Need help?</strong><br>Mon–Sat 9AM–7PM CST</div>
+      <div>
+        <strong>Follow us</strong>
+        <div class="social">
+          <a href="https://facebook.com/puppypur" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com/puppypur_official" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@puppypur" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://tiktok.com/@puppypur" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container payment-secure">
+      <p>We accept via PayPal • Venmo • Cash App • Zelle</p>
+      <div class="trust-badges">
+        <img src="/Images/paypal_PNG22.png" alt="PayPal">
+        <img src="/Images/venmo.png" alt="Venmo">
+        <img src="/Images/cashapp.png" alt="Cash App">
+        <img src="/Images/zelle.png" alt="Zelle">
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2024 PuppysPur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+      // Toggle dropdown on mobile tap
+      document.querySelectorAll('.dropdown').forEach(d => {
+        d.classList.remove('active');
+      });
+    });
+    // Mobile tap dropdown
+    document.querySelectorAll('.dropdown > a').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth <= 767) {
+          e.preventDefault();
+          trigger.parentElement.classList.toggle('active');
+        }
+      });
+    });
+    const counters = document.querySelectorAll('.counter-number');
+    const targets = [9, 91, 73, 100];
+    const suffixes = ['+', '+', '', '%'];
+    let triggered = false;
+    const animateCounters = () => {
+      counters.forEach((counter, i) => {
+        let count = 0;
+        const target = targets[i];
+        const inc = target / 100;
+        const update = () => {
+          if (count < target) {
+            count += inc;
+            counter.innerHTML = Math.ceil(count) + suffixes[i];
+            requestAnimationFrame(update);
+          } else {
+            counter.innerHTML = target + suffixes[i];
+          }
+        };
+        update();
+      });
+    };
+    window.addEventListener('scroll', () => {
+      if (!triggered && document.getElementById('counter').getBoundingClientRect().top < window.innerHeight * 0.8) {
+        animateCounters();
+        triggered = true;
+      }
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      const fill = document.querySelector('.progress-fill');
+      const icon = document.querySelector('.progress-icon');
+      if (fill) fill.style.width = progress + '%';
+      if (icon) icon.style.left = progress + '%';
+    });
+    function initScroll(id, prev, next) {
+      const container = document.getElementById(id);
+      const prevBtn = document.getElementById(prev);
+      const nextBtn = document.getElementById(next);
+      let index = 0;
+      function scroll() {
+        const card = container.children[0];
+        const gap = parseFloat(getComputedStyle(container).gap) || 16;
+        const width = card.offsetWidth + gap;
+        container.style.transform = `translateX(-${index * width}px)`;
+      }
+      nextBtn.onclick = () => {
+        const max = container.children.length - Math.floor(container.parentElement.offsetWidth / (container.children[0].offsetWidth + 16));
+        index = Math.min(index + 1, Math.max(0, max));
+        scroll();
+      };
+      prevBtn.onclick = () => {
+        index = Math.max(index - 1, 0);
+        scroll();
+      };
+      window.addEventListener('resize', () => { index = 0; scroll(); });
+      scroll();
+    }
+    initScroll('testimonials', 'prev', 'next');
+    document.querySelectorAll('.breed-slide, .puppy-card').forEach(card => {
+      let hoverTimeout;
+      card.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimeout);
+        for (let i = 0; i < 4; i++) {
+          setTimeout(() => {
+            const bubble = document.createElement('div');
+            bubble.className = 'paw-bubble';
+            bubble.innerHTML = '<i class="fas fa-paw" style="font-size:16px;color:#fff;"></i>';
+            bubble.style.setProperty('--x-offset', (Math.random() - 0.5) * 100 + 'px');
+            bubble.style.animationDelay = (i * 0.2) + 's';
+            card.appendChild(bubble);
+            setTimeout(() => bubble.remove(), 1500);
+          }, i * 150);
+        }
+      });
+      card.addEventListener('mouseleave', () => {
+        hoverTimeout = setTimeout(() => {
+          card.querySelectorAll('.paw-bubble').forEach(b => b.remove());
+        }, 200);
+      });
+    });
+  </script>
+</body>
+</html>

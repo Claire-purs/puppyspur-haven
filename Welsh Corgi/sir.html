@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Meet Sir – Chivalrous Tri-Color Pembroke Welsh Corgi Boy. Noble knight energy, gallant heart, and the most gentlemanly corgi in the realm!" />
+  <title>Sir | Pembroke Welsh Corgi | Puppy Pur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.5;scroll-behavior:smooth}
+    body{background:#000;overflow-x:hidden;position:relative}
+    a{color:#fff;text-decoration:none;transition:all .25s}
+    a:hover{color:#ff9100}
+    h1,h2,h3,h4,h5{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
+    .container{max-width:1240px;margin:auto;padding:0 1rem}
+    header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
+    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem}
+    .green-banner a{color:#fff;text-decoration:underline}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100}
+    .logo i{font-size:2.2rem;color:#ff9100}
+    .logo span{font-size:.85rem;color:#aaa;margin-left:.5rem}
+    .nav-links{display:flex;gap:2rem;font-size:.95rem}
+    .nav-links a{color:#fff;font-weight:600;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ff9100;transition:width .3s}
+    .nav-links a:hover::after{width:100%}
+    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem}
+    .right a{color:#ff9100;font-weight:600;display:flex;align-items:center;gap:.4rem}
+    .hamburger{display:none;cursor:pointer;font-size:1.8rem;color:#fff}
+    .hero{position:relative;height:60vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+    .hero .overlay{position:relative;z-index:1}
+    .hero h1{font-size:3.2rem;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+    .hero p{font-size:1.2rem;color:#ddd;margin:1rem 0}
+    .hero .btn{background:#ff9100;color:#000;padding:1rem 2.8rem;border-radius:50px;font-weight:700;font-size:1.1rem}
+    .hero .btn:hover{background:#ffb84d;transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,145,0,.4)}
+    .puppy-detail{padding:3rem 0}
+    .puppy-detail .grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+    .puppy-detail .left{order:1}
+    .puppy-detail .right{order:2}
+    .puppy-detail img.main{width:100%;border-radius:16px;height:400px;object-fit:cover}
+    .thumbnails{display:flex;gap:.5rem;margin-top:1rem;overflow-x:auto;padding:1rem 0}
+    .thumbnails img{width:80px;height:80px;object-fit:cover;border-radius:8px;cursor:pointer;opacity:.7;transition:.3s}
+    .thumbnails img:hover,.thumbnails img.active{opacity:1;transform:scale(1.05);border:2px solid #ff9100}
+    .puppy-info h1{font-size:2.5rem;margin-bottom:.5rem}
+    .puppy-info .tag{color:#66bb6a;font-size:.95rem;margin-bottom:1rem}
+    .puppy-info .price{font-size:2rem;font-weight:800;color:#ff9100;margin:1rem 0}
+    .puppy-info .price a{color:#ff9100;text-decoration:underline}
+    .puppy-info .details{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1.5rem;margin:1.5rem 0;font-size:.95rem}
+    .puppy-info .details div strong{color:#ccc}
+    .puppy-info .actions{margin-top:2rem;text-align:center}
+    .puppy-info .actions .btn.take{
+      background:#ff9100;color:#000;padding:1.2rem 3.2rem;border-radius:50px;font-weight:800;font-size:1.3rem;
+      box-shadow:0 8px 20px rgba(255,145,0,.4);position:relative;overflow:hidden;transition:all .4s cubic-bezier(0.25,0.8,0.25,1);
+      animation:pulse 2s infinite;cursor:pointer;display:inline-block
+    }
+    .puppy-info .actions .btn.take:hover{
+      background:#ffb84d;transform:scale(1.05);box-shadow:0 15px 30px rgba(255,145,0,.6)
+    }
+    .puppy-info .actions .btn.take.loading{pointer-events:none;opacity:.8}
+    .puppy-info .actions .btn.take .paw-loader{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;color:#000}
+    .puppy-info .actions .btn.take.loading .paw-loader{display:block;animation:paw 1.5s infinite}
+    .puppy-info .actions .btn.take.loading span{opacity:0}
+    @keyframes pulse{
+      0%{box-shadow:0 8px 20px rgba(255,145,0,.4)}50%{box-shadow:0 12px 30px rgba(255,145,0,.6)}100%{box-shadow:0 8px 20px rgba(255,145,0,.4)}
+    }
+    @keyframes paw{
+      0%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}25%{transform:translate(-50%,-50%) rotate(-20deg) scale(1.1)}50%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}75%{transform:translate(-50%,-50%) rotate(20deg) scale(1.1)}100%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}
+    }
+    .bio-section{padding:3rem 0;background:#111}
+    .bio-section h2{font-size:2rem;color:#ff9100;margin-bottom:1rem}
+    .bio-section p{font-size:1rem;color:#ccc;line-height:1.7;margin-bottom:1.5rem}
+    .breeder-card{display:flex;gap:1rem;align-items:center;background:#222;padding:1.5rem;border-radius:12px}
+    .breeder-card img{width:60px;height:60px;border-radius:50%;object-fit:cover}
+    .breeder-card .info h3{font-size:1.1rem;margin-bottom:.2rem}
+    .breeder-card .info p{font-size:.9rem;color:#aaa}
+    .included-section{padding:3rem 0}
+    .included-section h2{font-size:2rem;color:#ff9100;margin-bottom:1.5rem}
+    .included-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+    .included-item{display:flex;gap:1rem;align-items:start}
+    .included-item i{color:#66bb6a;font-size:1.3rem;margin-top:.1rem}
+    .included-item div h4{font-size:1rem;margin-bottom:.3rem}
+    .included-item div p{font-size:.9rem;color:#ccc}
+    .parents-section{padding:3rem 0;background:#111}
+    .parents-section h2{font-size:2rem;color:#ff9100;margin-bottom:1.5rem;text-align:center}
+    .parents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+    .parent-card{background:#222;padding:1.5rem;border-radius:12px;text-align:center}
+    .parent-card img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:1rem}
+    .parent-card h3{font-size:1.2rem;margin-bottom:.5rem}
+    .parent-card .details{font-size:.9rem;color:#ccc;line-height:1.6}
+    .siblings-section{padding:3rem 0}
+    .siblings-section h2{font-size:2rem;color:#ff9100;margin-bottom:1.5rem;text-align:center}
+    .siblings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+    .sibling-card{background:#222;padding:1rem;border-radius:12px;text-align:center;position:relative}
+    .sibling-card img{width:100%;height:160px;object-fit:cover;border-radius:12px}
+    .sibling-card .status{position:absolute;top:8px;left:8px;background:#66bb6a;color:#fff;padding:4px 8px;border-radius:6px;font-size:.8rem;font-weight:600}
+    .sibling-card .status.reserved{background:#ff9100}
+    .sibling-card h4{font-size:1rem;margin:.8rem 0 .3rem}
+    .sibling-card p{font-size:.85rem;color:#ccc}
+    .sibling-card .heart{position:absolute;top:8px;right:8px;color:#fff;font-size:1.2rem;opacity:.7;transition:.2s}
+    .sibling-card .heart:hover{opacity:1;transform:scale(1.3)}
+    .more-cavapoos{padding:4rem 0;background:#111}
+    .more-cavapoos h2{font-size:2rem;color:#ff9100;margin-bottom:2rem;text-align:center}
+    .more-grid{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding:1rem 0}
+    .more-grid-inner{display:inline-flex;gap:1.5rem}
+    .more-card{background:#222;border-radius:16px;overflow:hidden;width:240px;text-align:center;position:relative;flex-shrink:0}
+    .more-card img{width:100%;height:190px;object-fit:cover}
+    .more-card .info{padding:1rem}
+    .more-card h4{font-size:1.1rem;margin:0.5rem 0}
+    .more-card p{font-size:0.85rem;color:#ccc;margin:0.3rem 0}
+    .more-card .heart{position:absolute;top:12px;right:12px;color:#fff;font-size:1.3rem;opacity:0.7;transition:0.2s}
+    .more-card .heart:hover{opacity:1;transform:scale(1.2)}
+    .pre-footer{background:#111;padding:3rem 0;border-top:1px solid #222}
+    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;text-align:center}
+    .pre-footer .social a{margin:0 .7rem;font-size:1.6rem;color:#ff9100;transition:.2s}
+    .pre-footer .social a:hover{transform:scale(1.2)}
+    .payment-secure{text-align:center;margin-top:2rem;font-size:.95rem;color:#aaa}
+    .trust-badges{display:flex;justify-content:center;gap:1.5rem;margin-top:1rem;flex-wrap:wrap}
+    .trust-badges img{height:48px}
+    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center}
+    footer a{color:#ff9100}
+    /* Christmas snow */
+    .snow span{position:fixed;top:-30px;font-size:1.3rem;color:#fff;pointer-events:none;opacity:.7;z-index:9999;animation:snow linear infinite}
+    @keyframes snow{0%{transform:translateY(-10vh)}100%{transform:translateY(110vh)}}
+    .snow span:nth-child(1){left:10%;animation-duration:12s;animation-delay:0s}
+    .snow span:nth-child(2){left:25%;animation-duration:15s;animation-delay:2s}
+    .snow span:nth-child(3){left:40%;animation-duration:10s;animation-delay:1s}
+    .snow span:nth-child(4){left:55%;animation-duration:14s;animation-delay:3s}
+    .snow span:nth-child(5){left:70%;animation-duration:11s;animation-delay:0s}
+    .snow span:nth-child(6){left:85%;animation-duration:13s;animation-delay:4s}
+    @media(max-width:992px){
+      .puppy-detail .grid{grid-template-columns:1fr}
+      .puppy-detail .left{order:2}
+      .puppy-detail .right{order:1}
+    }
+    @media(max-width:767px){
+      .hamburger{display:block}
+      .nav-links,.right{display:none}
+      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1rem;border-bottom:1px solid #222}
+      .hero h1{font-size:2.5rem}
+      .puppy-info .actions .btn.take{width:100%}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Christmas snow -->
+  <div class="snow">
+    <span>❅</span><span>❆</span><span>❅</span><span>❆</span><span>❅</span><span>❆</span>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="green-banner">
+      <div class="container">Adopt Before Christmas — Limited Litters! Message Us On <a href="https://wa.me/12495216417" target="_blank">WhatsApp</a></div>
+    </div>
+    <div class="nav-bar container">
+      <div class="logo">
+        <i class="fas fa-paw"></i>
+        PuppysPur
+        <span>Cute • Pet • Adoption • Haven • TX</span>
+      </div>
+      <div class="nav-links">
+        <a href="../../index.html#available">Available Puppies</a>
+        <a href="../../index.html#promise">Our Promise</a>
+        <a href="../../index.html#about">About Us</a>
+        <a href="../../how-it-works.html">How It Works</a>
+        <a href="../../index.html#contact">Contact</a>
+      </div>
+      <div class="right">
+        <a href="https://wa.me/12495216417" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now</a>
+      </div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+     <video autoplay loop muted playsinline poster="../../videos/princess.jpg" preload="auto">
+      <source src="/VIDEO/princess videoo.mp4" type="video/mp4">
+      <source src="/VIDEO/princess videoo.mp4" type="video/webm">
+      Your browser does not support video.
+    </video> 
+    <div class="overlay container">
+      <h1>Meet Sir</h1>
+      <p>Tri-Color Pembroke Welsh Corgi • Male • 9 weeks old • Ready Late December</p>
+      <a href="#reserve" class="btn">Reserve Sir</a>
+    </div>
+  </section>
+
+  <!-- PUPPY DETAIL -->
+  <section class="puppy-detail">
+    <div class="container grid">
+      <div class="left">
+        <img src="/Welsh Corgi/sir/sir,stitch.jpg" alt="Sir playing" class="main" id="main-img">
+        <div class="thumbnails">
+          <img src="/Welsh Corgi/sir/sir,stitch1.jpg" alt="Sir 1" class="active" onclick="changeImg(this)">
+          <img src="/Welsh Corgi/sir/sir,stitch2.jpg" alt="Sir 2" onclick="changeImg(this)">
+          <img src="../../sir/sir-thumb-3.jpg" alt="Sir 3" onclick="changeImg(this)">
+          <img src="../../sir/sir-thumb-4.jpg" alt="Sir 4" onclick="changeImg(this)">
+          <img src="../../sir/sir-thumb-5.jpg" alt="Sir 5" onclick="changeImg(this)">
+        </div>
+      </div>
+      <div class="right">
+        <div class="puppy-info">
+          <h1>Sir</h1>
+          <div class="tag">Available: 12 families viewing today</div>
+          <div class="price">$975</div>
+          <div class="details">
+            <div><strong>Born</strong><br>October 3rd, 2025</div>
+            <div><strong>Mom</strong><br>Keesha • 27 lbs</div>
+            <div><strong>Dad</strong><br>Lincoln • 30 lbs</div>
+            <div><strong>Color</strong><br>Tri-Color</div>
+            <div><strong>Expected Adult</strong><br>25–31 lbs</div>
+            <div><strong>Coat</strong><br>Classic Corgi</div>
+          </div>
+          <div class="actions">
+            <a href="https://wa.me/12495216417?text=Hi!%20I'd%20like%20to%20reserve%20Sir!" class="btn take" id="takeBtn">
+              <span>Take Me Home</span>
+              <div class="paw-loader">Paw</div>
+            </a>
+            <p style="font-size:.85rem;color:#aaa;margin-top:.8rem">Payments secured • 72-hour health guarantee with vet check • Full health records</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio-section">
+    <div class="container">
+      <h2>Hi, I'm Sir!</h2>
+         <p>I’m a 9-week-old happy little Corgi with short, wiggly legs and a big heart! I’ll fill your days with lots of love, laughter, and tail wags. I adore running around the yard, playing with my favorite humans, and of course snuggle time is the best time!
+
+         I’ve been vet-checked, vaccinated, and dewormed, so I’m all ready for my new home. And guess what? I’ll be the best Christmas present ever full of joy, cuddles, and holiday cheer.
+
+         I can’t wait to meet you, I just know we’ll be best friends!!</p>
+      <div class="breeder-card">
+        <img src="/breeders/michaeel.jpg" alt="Michael Davis">
+        <div class="info">
+          <h3>Puppy’s Pur Family</h3>
+          <p>USDA #74-A-2468 • Hillsboro, Texas • Family-Run</p>
+          <p><small><a href="/breeders/michael-davis.html">View full breeder profile →</a></small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDED -->
+  <section class="included-section">
+    <div class="container">
+      <h2>Everything included with Sir</h2>
+      <div class="included-grid">
+        <div class="included-item"><i class="fas fa-shield-alt"></i><div><h4>2-Year Health Guarantee</h4><p>Covers genetic conditions</p></div></div>
+        <div class="included-item"><i class="fas fa-microchip"></i><div><h4>Implanted Microchip</h4><p>Pre-registered to you</p></div></div>
+        <div class="included-item"><i class="fas fa-user-check"></i><div><h4>USDA-Licensed Breeder</h4><p>Inspected annually</p></div></div>
+        <div class="included-item"><i class="fas fa-syringe"></i><div><h4>Age-Appropriate Vaccines</h4><p>Dewormed 3x</p></div></div>
+        <div class="included-item"><i class="fas fa-stethoscope"></i><div><h4>Full Vet Exam</h4><p>Health cert included</p></div></div>
+        <div class="included-item"><i class="fas fa-gift"></i><div><h4>Puppy Starter Pack</h4><p>Food, toy, blanket with mom’s scent</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARENTS -->
+
+  <!-- SIBLINGS - SIR'S LITTER (no Sir card) -->
+  <section class="siblings-section">
+    <div class="container">
+      <h2>Sir's Littermates</h2>
+      <div class="siblings-grid">
+        <!-- Princess - Available -->
+        <div class="sibling-card">
+          <div class="status">Available</div>
+          <img src="/Welsh Corgi/princess/princess,sir,stitch.jpg" alt="Princess">
+          <h4>Princess</h4>
+          <p>Female • Tri-Color</p><br>
+            <p style="color: #ff9100;"><strong>$975</strong></p> 
+          <a href="princess.html" class="heart"><i class="far fa-heart"></i></a>
+        </div>
+        <!-- Queen - Available -->
+        <div class="sibling-card">
+          <div class="status">Available</div>
+          <img src="/Welsh Corgi/queen/queen.jpg" alt="Queen">
+          <h4>Queen</h4>
+          <p>Female • Tri-Color</p><br>
+            <p style="color: #ff9100;"><strong>$975</strong></p> 
+          <a href="queen.html" class="heart"><i class="far fa-heart"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE CORGIS -->
+  <section class="more-cavapoos">
+    <div class="container">
+      <h2>More Available Pembroke Welsh Corgis</h2>
+      <div class="more-grid">
+        <div class="more-grid-inner">
+         <div class="more-card">
+            <img src="/Welsh Corgi/grace,will,karen, jack/will.jpg" alt="Will">
+            <div class="info"><h4>Will</h4><p>Female • Tri-Color • 9 weeks</p></div><br>
+            <p style="color: #ff9100;"><strong>$950</strong></p> 
+            <a href="will.html" class="heart"><i class="far fa-heart"></i></a>
+          </div>
+          <div class="more-card">
+            <img src="/Welsh Corgi/grace,will,karen, jack/grace.jpg" alt="Grace">
+            <div class="info"><h4>Grace</h4><p>Female • Tri-Color • 9 weeks</p></div><br>
+            <p style="color: #ff9100;"><strong>$950</strong></p> 
+            <a href="grace.html" class="heart"><i class="far fa-heart"></i></a>
+          </div>
+           <div class="more-card">
+            <img src="/Welsh Corgi/jim/Jim1.jpg" alt="Jim">
+            <div class="info"><h4>Jim</h4><p>Male • Tri-Color • 11 weeks</p></div><br>
+            <p style="color: #ff9100;"><strong>$850</strong></p> 
+            <a href="jim.html" class="heart"><i class="far fa-heart"></i></a>
+          </div>
+          <div class="more-card">
+            <img src="/Welsh Corgi/lord,marlee,mavis,max/marlee.jpg" alt="Marlee">
+            <div class="info"><h4>Marlee</h4><p>Female • Sable • 9 weeks</p></div><br>
+            <p style="color: #ff9100;"><strong>$850</strong></p> 
+            <a href="marlee.html" class="heart"><i class="far fa-heart"></i></a>
+          </div>
+           <div class="more-card">
+            <img src="/Welsh Corgi/grace,will,karen, jack/jack.jpg" alt="Jack">
+            <div class="info"><h4>Jack</h4><p>Male • Sable • 9 weeks</p></div><br>
+            <p style="color: #ff9100;"><strong>$950</strong></p> 
+            <a href="jack.html" class="heart"><i class="far fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="../pembroke-corgi.html" style="background:#ff9100;color:#000;padding:0.9rem 2.5rem;border-radius:50px;font-weight:700;font-size:1rem;display:inline-block;transition:0.3s"
+           onmouseover="this.style.background='#ffb84d';this.style.transform='translateY(-3px)'"
+           onmouseout="this.style.background='#ff9100';this.style.transform='translateY(0)'">
+          View All Pembroke Welsh Corgis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE-FOOTER -->
+  <section class="pre-footer">
+    <div class="container grid">
+      <div>Over 92+ happy families since 2024. Your Purfect puppy is waiting.</div>
+      <div><strong>Need help?</strong><br>Mon–Sat 9AM–7PM CST</div>
+      <div>
+        <strong>Follow us</strong>
+        <div class="social">
+          <a href="https://instagram.com/puppypur_official" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/puppypur" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://youtube.com/@puppypur" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://tiktok.com/@puppypur" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container payment-secure">
+      <p>We accept PayPal • Venmo • Cash App • Zelle</p>
+      <div class="trust-badges">
+        <img src="/Images/paypal_PNG22.png" alt="PayPal">
+        <img src="/Images/venmo.png" alt="Venmo">
+        <img src="/Images/cashapp.png" alt="Cash App">
+        <img src="/Images/zelle.png" alt="Zelle">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2024 Puppy’s Pur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+    function changeImg(img) {
+      document.getElementById('main-img').src = img.src.replace('-thumb', '');
+      document.querySelectorAll('.thumbnails img').forEach(i => i.classList.remove('active'));
+      img.classList.add('active');
+    }
+    const takeBtn = document.getElementById('takeBtn');
+    takeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      takeBtn.classList.add('loading');
+      setTimeout(() => {
+        takeBtn.classList.remove('loading');
+        window.location.href = takeBtn.href;
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
