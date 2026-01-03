@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="All Reviews – PuppysPur Corgi Breeder" />
+  <title>All Reviews | PuppysPur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.5}
+    body{background:#000;overflow-x:hidden;position:relative}
+    a{color:#fff;text-decoration:none;transition:all .25s}
+    a:hover{color:#ff9100}
+    h1,h2{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
+    .container{max-width:1240px;margin:auto;padding:0 1rem;width:100%}
+    header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222;padding:1.5rem 0}
+    .logo{font-size:2rem;font-weight:800;color:#ff9100;display:flex;align-items:center;justify-content:center;gap:.5rem}
+    .logo i{color:#ff9100;font-size:2.8rem}
+    .reviews-section{padding:5rem 0}
+    .reviews-header h1{font-size:2.8rem;color:#fff;margin-bottom:1rem}
+    .reviews-header p{font-size:1.2rem;color:#ccc;margin-bottom:3rem}
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:2.5rem;
+    }
+    .review-card{
+      background:#111;border-radius:16px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.4);
+      transition:all .3s ease;
+    }
+    .review-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(255,145,0,0.2)}
+    .review-img img{width:100%;height:220px;object-fit:cover}
+    .review-content{padding:1.8rem}
+    .stars{color:#00b67a;font-size:1.2rem;margin-bottom:1rem;display:flex;gap:5px}
+    .review-text{font-size:1.02rem;color:#ddd;line-height:1.7;margin-bottom:1.5rem}
+    .author{color:#66bb6a;font-size:1.05rem;display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem}
+    .author i{color:#66bb6a}
+    .date{color:#888;font-size:.95rem}
+    .pagination{
+      display:flex;justify-content:center;gap:1rem;margin-top:5rem;flex-wrap:wrap;
+    }
+    .pagination a{
+      width:55px;height:55px;border-radius:50%;background:#222;color:#fff;display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:1.1rem;transition:all .3s;
+    }
+    .pagination a:hover{background:#ff9100;color:#000;transform:scale(1.15)}
+    .pagination a.active{background:#ff9100;color:#000}
+    footer{background:#000;color:#777;padding:2.5rem 0;font-size:.95rem;text-align:center;border-top:1px solid #222}
+    footer a{color:#ff9100;font-weight:600}
+    @media(max-width:767px){
+      .reviews-grid{grid-template-columns:1fr}
+      .pagination a{width:50px;height:50px;font-size:1rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container logo">
+      <i class="fas fa-paw"></i> PuppysPur – All Reviews
+    </div>
+  </header>
+
+  <section class="reviews-section">
+    <div class="container">
+      <div class="reviews-header">
+        <h1>Real Families, Real Stories</h1>
+        <p>Over 92+ verified puppy parents trust PuppysPur. Here are their honest reviews.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review18.jpg" alt="Liam T. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I recently loss my 14 1/2 yr old Corgi who was my best friend. My heart was hurting. I wanted another corgi to share all the love I have inside of me with another puppy. I still have the brother of the one that past away, and did not want him to be all alone. After a week of searching for one, my friend found this page. I could not be any happier. This puppy is so loving, smart and fun to be around. The breeder was very nice and quick to replied to my chat. Highly recommended and I will go back if and when the time comes to have another puppy join our family.</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Denise</p>
+            <p class="date">January 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review17.jpg" alt="Emma R. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">We got our 15 week old Corgi puppy from Sarah Miller in March 2024. We are so impressed with how well she was raised. From the day we brought her home, she went outside to bathroom. Sarah told us that he did not house-train the litter, but the mama dog must have. Our puppy is very sweet and loves everyone. She is great with kids. When we got her, she was current with all her shots and is in excellent health. We lost our dog of ten years a month prior to getting her, and she has helped heal our heart so much. Thank you Sarah for being such a caring breeder!</p>
+            <p class="author"><i class="fas fa-check-circle"></i>Linda Hall</p>
+            <p class="date">September 17, 2024</p>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/puppyspur------reviews.png" alt="Sophia M. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <p class="review-text">We had an excellent experience getting our puppy from puppyspur. They we’re very easy to do business with and he and his family were wonderful. Our little Willow is healthy, happy and very sweet. The experience was five stars all the way</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Caroline Kuhnle.</p>
+            <p class="date">February 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review33.jpg" alt="Noah K. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">We Are So Thankful for Eros (Formerly Nicholas). He has brought so much joy to our family. We traveled from Florida to TX in a snowstorm to pick him up. michael was gracious enough to meet as the top of his street to bring us Eros on a skidder. Eros is a happy guy doing very well in his new environment. Climbing upstairs and jumping out of his playpen… Busy little guy. Marvia has been very responsive to any questions and helpful with the Eros transition. We would definitely recommend Michael to friends and family members wanted a puppy!.</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Ronita</p>
+            <p class="date">February 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review32.jpg" alt="Olivia P. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I want to say thank you I love my new baby boy MILO formerly ANSON…I must say from the beginning to end of delivery this has been the most professional and pleasant stress free and best present I ever received and all so worth it…all I can say I will be getting MILO a sister soon 😁 ..love love love … .</p>
+            <p class="author"><i class="fas fa-check-circle"></i> victoria</p>
+            <p class="date">March 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review31.jpg.png" alt="James H. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">We got our puppies from michael davis, and he was outstanding throughout the process making our puppies transition so much easier. michael is a true professional who’s not just breeding dogs but he’s loving the dogs he’s breeding,. Our puppies were well adjusted to the home life before arriving with us and were already almost totally potty trained. michael chatted us to check on the puppies’ numerous times throughout the process and answered any and all questions we had. We thank God for michael and our new puppies..</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Amina</p>
+            <p class="date">March 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/puppyspur------reviews.png" alt="Ava L. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">A wonderful experience all around and we. Ended up with a joyful little girl She came to us at 12 weeks old pretty much trained. We could write a book on how wonderful Ellie is and encourage all of you to contact Greenfield Puppies. Look no further. 😀🙏😀🙏😀🙏😀🙏👏👏!</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Tony Petrangelo</p>
+            <p class="date">August 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review30.jpg" alt="William S. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I found Rory on puppyspur yesterday, contacted sarah miller right away and scheduled to pick her up the next day! I drove 6 hours and I’m so happy with my puppy and how sweet the breeder was. Sandy and her mom were so sweet and so informative with Rory. I adopted a Boston Terrier and if I’m ever searching for a puppy I’ll use those website again! Prices were amazing and breeder was very safe & the sweetest!</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Cherron</p>
+            <p class="date">April 2024</p>
+          </div>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review29.jpg" alt="Charlotte B. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I am absolutely elated with my beautiful new puppy , Bodie🥰 I work in a very busy retail shop in Bend Oregon, and one of our customers came in with one of merle puppies. I fell in love with this adorable kind.corgis right away. I thought about this Dog for more than a month and asked my customer to please give me sarah’s phone number. I chatted puppyspur and chose Bodie.
+puppyspur was so kind and patient with my many questions on how to transport the puppy from TX to Oregon. Her Transport team reached out to me throughout the entire process, sending itineraries updated pictures of his travels, etc… it was definitely one of the best experiences I have ever had! The puppy was coming home to three other dogs, a horse and three large parrots. When he came through the door, it was as if he had lived there forever.🥰 the puppy is so well acclimated with children, animals and people. He was the perfect addition to our family, and loves going to work every day to see everybody. Thank you very much Elmer, to you ,and your team for making this a fabulous experience.</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Pamela Kenneall</p>
+            <p class="date">June 2024</p>
+          </div>
+        </div>
+
+        <!-- Review 10 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review28.jpg" alt="Lucas G. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I found this little angel and just had to find a way to get her, i don't like th fact that they didn't have a call button, please you guys should ty ad mak that accessable, but i had to get my baby. she was available.
+I was so please that she was. The breeder was very nice and helpful. I then chatted  PPCPAH their WhatsApp-line directly to make the payment and arrange shipping. Sarah took my payment and was absolutely amazing. she transferred me to Michael to arrange travel and he was fantastic. All in all, the entire experience was excellent.
+I’ve renamed her Aurora. Within a day, this little 8-week-old, 1&1/2 lb corgi has already mastered going potty on the pad and sit/stay. She’s now officially registered as my service dog as I’m disabled. She’s proving to be a happy addition to my family</p>
+            <p class="author"><i class="fas fa-check-circle"></i> jonathan</p>
+            <p class="date">June 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <a href="reviews.html">1</a>
+        <a href="reviews-page2.html" class="active">2</a>
+        <a href="reviews-page3.html">3</a>
+        <a href="reviews-page4.html">4</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2025 PuppysPur Cute Pet Adoption Haven • <a href="/index.html">Back to Home</a>
+    </div>
+  </footer>
+</body>
+</html>

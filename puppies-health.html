@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Puppy Pur Health Guarantee – Your Corgi’s health and happiness are our top priority." />
-  <title>Puppies Health Care & Guarantee | Puppy Pur</title>
+  <meta name="description" content="Puppy Pur Health Care & Guarantee – Your Corgi’s health and happiness are our top priority." />
+  <title>Health Care & Guarantee | Puppy Pur</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -14,25 +14,26 @@
     a{color:#fff;text-decoration:none;transition:all .25s}
     a:hover{color:#ff9100}
     h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
-    .container{max-width:1240px;margin:auto;padding:0 1rem}
+    .container{max-width:1240px;margin:auto;padding:0 1rem;width:100%}
     header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
-    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem}
+    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem;display:flex;justify-content:center;align-items:center}
     .green-banner a{color:#fff;text-decoration:underline}
-    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100}
-    .logo i{font-size:2.2rem;color:#ff9100}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100;flex-shrink:0}
+    .logo i{color:#ff9100;font-size:2.2rem}
     .logo span{font-size:.85rem;color:#aaa;margin-left:.5rem}
-    .nav-links{display:flex;gap:2rem;font-size:.95rem}
+    .nav-links{display:flex;gap:2rem;font-size:.95rem;align-items:center}
     .nav-links a{color:#fff;font-weight:600;position:relative}
     .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ff9100;transition:width .3s}
     .nav-links a:hover::after{width:100%}
-    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem}
+    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem;flex-shrink:0}
     .right a{color:#ff9100;font-weight:600;display:flex;align-items:center;gap:.4rem}
     .hamburger{display:none;cursor:pointer;font-size:1.8rem;color:#fff}
-    .hero{position:relative;height:60vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:#111}
+    .hero{position:relative;height:60vh;min-height:400px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:#111}
+    .hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url('/Images/health-hero.jpg') center/cover no-repeat;opacity:.3}
     .hero .overlay{position:relative;z-index:1;padding:2rem}
-    .hero h1{font-size:3.5rem;color:#fff;margin-bottom:1rem}
-    .hero p{font-size:1.2rem;color:#ddd;max-width:900px;margin:auto;line-height:1.7}
+    .hero h1{font-size:clamp(2.5rem,8vw,3.5rem);color:#fff;margin-bottom:1rem}
+    .hero p{font-size:clamp(1rem,4vw,1.2rem);color:#ddd;max-width:900px;margin:auto;line-height:1.7}
     .content-section{padding:5rem 0;background:#111}
     .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
     .content-grid.reverse{grid-template-columns:1fr 1fr;direction:rtl}
@@ -42,24 +43,34 @@
       transform:rotate(-3deg);max-width:500px;justify-self:center
     }
     .content-grid.reverse .content-media{transform:rotate(3deg)}
-    .content-media img,.content-media video{width:100%;height:380px;object-fit:cover;display:block}
+    .content-media img,.content-media video{width:100%;height:380px;object-fit:cover;display:block;border-radius:20px}
     .content-text{padding:2rem;background:#111;border-radius:16px;position:relative;z-index:1}
-    .content-text h2{font-size:2.5rem;color:#ff9100;margin-bottom:1.5rem;text-align:left}
+    .content-text h2{font-size:clamp(2rem,6vw,2.5rem);color:#ff9100;margin-bottom:1.5rem;text-align:left}
     .content-text p{font-size:1rem;color:#ddd;line-height:1.8;margin-bottom:1.2rem}
     .content-text ul{list-style:none;padding-left:0}
-    .content-text li{position:relative;padding-left:1.8rem;margin-bottom:.8rem;color:#ddd}
-    .content-text li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;color:#66bb6a;position:absolute;left:0}
-    .highlight-box{background:#222;padding:2rem;border-radius:16px;margin:2rem 0;border-left:5px solid #ff9100}
-    .highlight-box h3{font-size:1.8rem;color:#ff9100;margin-bottom:1rem}
+    .content-text li{position:relative;padding-left:2.5rem;margin-bottom:1rem;color:#ccc;font-size:1.05rem}
+    .content-text li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;color:#66bb6a;position:absolute;left:0;top:2px;font-size:1.4rem}
+    .highlight-box{background:#222;padding:2.5rem;border-radius:16px;margin:2rem 0;border-left:5px solid #ff9100}
+    .highlight-box h3{font-size:1.8rem;color:#ff9100;margin-bottom:1rem;text-align:center}
+    .highlight-box ul li{font-size:1rem}
     .pre-footer{background:#111;padding:3rem 0;border-top:1px solid #222}
-    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;text-align:center;align-items:start}
+    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;text-align:center;align-items:start}
     .pre-footer .social a{margin:0 .7rem;font-size:1.6rem;color:#ff9100;transition:.2s}
     .pre-footer .social a:hover{transform:scale(1.2)}
     .payment-secure{text-align:center;margin-top:2rem;font-size:.95rem;color:#aaa}
-    .trust-badges{display:flex;justify-content:center;align-items:center;gap:2rem;margin-top:1rem;flex-wrap:nowrap}
-    .trust-badges img{height:48px}
-    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center}
+    .trust-badges{display:flex;justify-content:center;align-items:center;gap:2rem;margin-top:1rem;flex-wrap:wrap}
+    .trust-badges img{height:48px;max-width:100%;object-fit:contain}
+    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center;display:flex;justify-content:center;align-items:center}
     footer a{color:#ff9100}
+    /* Christmas snow */
+    .snow span{position:fixed;top:-30px;font-size:1.3rem;color:#fff;pointer-events:none;opacity:.7;z-index:9999;animation:snow linear infinite}
+    @keyframes snow{0%{transform:translateY(-10vh)}100%{transform:translateY(110vh)}}
+    .snow span:nth-child(1){left:10%;animation-duration:12s;animation-delay:0s}
+    .snow span:nth-child(2){left:25%;animation-duration:15s;animation-delay:2s}
+    .snow span:nth-child(3){left:40%;animation-duration:10s;animation-delay:1s}
+    .snow span:nth-child(4){left:55%;animation-duration:14s;animation-delay:3s}
+    .snow span:nth-child(5){left:70%;animation-duration:11s;animation-delay:0s}
+    .snow span:nth-child(6){left:85%;animation-duration:13s;animation-delay:4s}
     @media(max-width:992px){
       .content-grid,.content-grid.reverse{grid-template-columns:1fr;gap:3rem}
       .content-media{transform:none;max-width:100%}
@@ -67,45 +78,22 @@
     @media(max-width:767px){
       .hamburger{display:block}
       .nav-links,.right{display:none}
-      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1rem;border-bottom:1px solid #222}
+      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1.5rem 0;border-bottom:1px solid #222;width:100%;z-index:999}
       .hero h1{font-size:2.8rem}
       .content-text h2{font-size:2rem;text-align:center}
+      .content-text li{padding-left:2rem}
+      .content-text li::before{font-size:1.2rem}
       .pre-footer .grid{grid-template-columns:1fr}
       .trust-badges{gap:1rem;flex-wrap:wrap}
     }
-    /* Snowflakes */
-    .snowflake{position:fixed;top:-20px;color:#fff;pointer-events:none;z-index:9999;animation:fall linear infinite}
-    .snowflake.small{font-size:0.8rem;opacity:0.7}
-    @keyframes fall{0%{transform:translateY(-10vh) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
-    .snowflake:nth-child(1){left:10%;animation-duration:14s;animation-delay:0s}
-    .snowflake:nth-child(2){left:25%;animation-duration:18s;animation-delay:2s}
-    .snowflake:nth-child(3){left:40%;animation-duration:12s;animation-delay:1s}
-    .snowflake:nth-child(4){left:55%;animation-duration:16s;animation-delay:4s}
-    .snowflake:nth-child(5){left:70%;animation-duration:15s;animation-delay:1.5s}
-    .snowflake:nth-child(6){left:85%;animation-duration:20s;animation-delay:3s}
-    .snowflake:nth-child(7){left:15%;animation-duration:17s;animation-delay:5s}
-    .snowflake:nth-child(8){left:65%;animation-duration:13s;animation-delay:0.5s}
-    .snowflake:nth-child(9){left:35%;animation-duration:19s;animation-delay:6s}
-    .snowflake:nth-child(10){left:80%;animation-duration:11s;animation-delay:7s}
-    .snowflake:nth-child(11){left:5%;animation-duration:16s;animation-delay:4.5s}
-    .snowflake:nth-child(12){left:90%;animation-duration:15s;animation-delay:8s}
   </style>
 </head>
 <body>
 
-  <!-- Snowflakes -->
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <!-- Christmas snow -->
+  <div class="snow">
+    <span>❅</span><span>❆</span><span>❅</span><span>❆</span><span>❅</span><span>❆</span>
+  </div>
 
   <!-- HEADER -->
   <header>
@@ -119,14 +107,14 @@
         <span>Cute • Pet • Adoption • Haven • TX</span>
       </div>
       <div class="nav-links">
-        <a href="index.html#available">Available Puppies</a>
-        <a href="index.html#promise">Our Promise</a>
-        <a href="index.html#about">About Us</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="../index.html#available">Available Puppies</a>
+        <a href="../index.html#promise">Our Promise</a>
+        <a href="../index.html#about">About Us</a>
+        <a href="../how-it-works.html">How It Works</a>
+        <a href="../index.html#contact">Contact</a>
       </div>
       <div class="right">
-        <a href="https://wa.me/12495216417" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now </a>
+        <a href="https://wa.me/12495216417" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now</a>
       </div>
       <div class="hamburger">
         <i class="fas fa-bars"></i>
@@ -134,11 +122,11 @@
     </div>
   </header>
 
-  <!-- HERO TITLE -->
+  <!-- HERO -->
   <section class="hero">
     <div class="overlay container">
       <h1>Your Puppy’s Health is Everything</h1>
-      <p>We’re dedicated to ensuring your new companion arrives healthy, happy, and ready for cuddles. Our health protocols are designed to give you complete peace of mind.</p>
+      <p>We’re dedicated to ensuring your new companion arrives healthy, happy, and ready for a lifetime of love. Our rigorous health protocols give you complete peace of mind.</p>
     </div>
   </section>
 
@@ -148,16 +136,17 @@
       <!-- Intro Block -->
       <div class="content-grid">
         <div class="content-media">
-          <img src="health/vet-exam.jpg" alt="Veterinarian examining puppy">
+          <img src="/Images/health/vet-exam.jpg" alt="Veterinarian examining puppy" loading="lazy">
         </div>
         <div class="content-text">
-          <h2>Every puppy receives a nose-to-tail health check before coming home.</h2>
-          <p>Our puppies are raised in loving home environments with the highest standards of care. Before leaving us, every puppy undergoes a comprehensive veterinary examination to ensure they are in perfect health.</p>
+          <h2>Nose-to-Tail Health Check</h2>
+          <p>Every Puppy Pur Corgi receives a thorough veterinary examination before going home — ensuring they are in perfect health and ready for their new family.</p>
           <ul>
-            <li>Full physical exam covering eyes, ears, mouth, heart, lungs, and more</li>
-            <li>Age-appropriate vaccinations and deworming</li>
-            <li>Microchip pre-registered to you</li>
-            <li>Health certificate for safe travel</li>
+            <li>Full physical exam (eyes, ears, heart, lungs, joints & more)</li>
+            <li>Age-appropriate vaccinations & multiple dewormings</li>
+            <li>Fecal parasite screening</li>
+            <li>Pre-registered microchip</li>
+            <li>Official health certificate</li>
           </ul>
         </div>
       </div>
@@ -165,21 +154,21 @@
       <!-- Comprehensive Evaluation -->
       <div class="content-grid reverse">
         <div class="content-text">
-          <h2>Our Comprehensive Health Evaluation</h2>
-          <p>Every Puppy Pur Corgi receives thorough veterinary screening by a licensed veterinarian. This “nose-to-tail” exam checks for any signs of illness or congenital issues, ensuring your puppy is 100% ready for their new home.</p>
+          <h2>Premium Veterinary Care</h2>
+          <p>Our puppies are raised with love and the highest standards. Each one sees a licensed veterinarian for a complete “nose-to-tail” evaluation — so you can welcome them home with total confidence.</p>
           <div class="highlight-box">
-            <h3>What’s Included:</h3>
+            <h3>Every Puppy Receives:</h3>
             <ul>
-              <li>Complete physical examination</li>
-              <li>Fecal test for parasites</li>
+              <li>Comprehensive physical examination</li>
               <li>Up-to-date vaccinations & deworming</li>
               <li>Microchip implantation & registration</li>
-              <li>Official health certificate</li>
+              <li>Parasite screening</li>
+              <li>Travel-ready health certificate</li>
             </ul>
           </div>
         </div>
         <div class="content-media">
-          <img src="health/nose-to-tail.jpg" alt="Comprehensive puppy health check">
+          <img src="/Images/health/nose-to-tail.jpg" alt="Comprehensive puppy health check" loading="lazy">
         </div>
       </div>
     </div>
@@ -190,22 +179,22 @@
     <div class="container">
       <div class="content-grid">
         <div class="content-media">
-          <img src="health/guarantee.jpg" alt="Happy healthy Corgi puppy">
+          <img src="/Images/health/guarantee.jpg" alt="Happy healthy Corgi puppy" loading="lazy">
         </div>
         <div class="content-text">
-          <h2>2-Year Health Guarantee</h2>
-          <p>We stand behind the health of every Puppy Pur Corgi with our industry-leading 2-year health guarantee against life-threatening genetic conditions.</p>
+          <h2>2-Year Genetic Health Guarantee</h2>
+          <p>We proudly stand behind every Puppy Pur Corgi with an industry-leading 2-year guarantee against life-threatening genetic conditions.</p>
           <div class="highlight-box">
             <h3>Covered Conditions Include:</h3>
             <ul>
               <li>Degenerative Myelopathy (DM)</li>
-              <li>von Willebrand’s Disease (vWD1)</li>
+              <li>von Willebrand’s Disease (vWD)</li>
               <li>Exercise-Induced Collapse (EIC)</li>
               <li>Other serious congenital defects</li>
             </ul>
-            <p style="margin-top:1rem;font-size:.95rem"><strong>If diagnosed by a licensed veterinarian within 2 years, we will replace your puppy with one of equal value when available.</strong></p>
+            <p style="margin-top:1rem;font-size:1rem;color:#fff"><strong>If diagnosed within 2 years, we provide a replacement puppy of equal value from a future litter.</strong></p>
           </div>
-          <p style="margin-top:1.5rem;font-size:.9rem;color:#aaa">*Requires vet exam within 72 hours of arrival and proof of continued care. Full terms available upon request.</p>
+          <p style="margin-top:1.5rem;font-size:.95rem;color:#aaa">*Requires initial vet exam within 72 hours & proof of ongoing care. Full terms provided at purchase.</p>
         </div>
       </div>
     </div>
@@ -214,7 +203,7 @@
   <!-- PRE-FOOTER -->
   <section class="pre-footer">
     <div class="container grid">
-      <div>Over 92+ happy families since 2024. Your perfect puppy is waiting.</div>
+      <div>Over 92+ happy families. Your perfect puppy is waiting.</div>
       <div><strong>Need help?</strong><br>Mon–Sat 9AM–7PM CST</div>
       <div>
         <strong>Follow us</strong>
@@ -229,10 +218,10 @@
     <div class="container payment-secure">
       <p>We accept PayPal • Venmo • Cash App • Zelle</p>
       <div class="trust-badges">
-        <img src="../badges/paypal.png" alt="PayPal">
-        <img src="../badges/venmo.png" alt="Venmo">
-        <img src="../badges/cashapp.png" alt="Cash App">
-        <img src="../badges/zelle.png" alt="Zelle">
+        <img src="/Images/paypal_PNG22.png" alt="PayPal">
+        <img src="/Images/venmo.png" alt="Venmo">
+        <img src="/Images/cashapp.png" alt="Cash App">
+        <img src="/Images/zelle.png" alt="Zelle">
       </div>
     </div>
   </section>
@@ -240,7 +229,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      © 2024 Puppy’s Pur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
+      © 2025 Puppy’s Pur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
     </div>
   </footer>
 

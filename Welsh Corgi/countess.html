@@ -14,45 +14,46 @@
     a{color:#fff;text-decoration:none;transition:all .25s}
     a:hover{color:#ff9100}
     h1,h2,h3,h4,h5{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
-    .container{max-width:1240px;margin:auto;padding:0 1rem}
+    .container{max-width:1240px;margin:auto;padding:0 1rem;width:100%}
     header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
-    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem}
+    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem;display:flex;justify-content:center;align-items:center}
     .green-banner a{color:#fff;text-decoration:underline}
-    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100;flex-shrink:0}
     .logo i{color:#ff9100;font-size:2.2rem}
     .logo span{font-size:.85rem;color:#aaa;margin-left:.5rem}
-    .nav-links{display:flex;gap:2rem;font-size:.95rem}
+    .nav-links{display:flex;gap:2rem;font-size:.95rem;align-items:center}
     .nav-links a{color:#fff;font-weight:600;position:relative}
     .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ff9100;transition:width .3s}
     .nav-links a:hover::after{width:100%}
-    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem}
+    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem;flex-shrink:0}
     .right a{color:#ff9100;font-weight:600;display:flex;align-items:center;gap:.4rem}
     .hamburger{display:none;cursor:pointer;font-size:1.8rem;color:#fff}
-    .hero{position:relative;height:60vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero{position:relative;height:60vh;min-height:400px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
     .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.75}
-    .hero .overlay{position:relative;z-index:1}
-    .hero h1{font-size:3.2rem;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.8)}
-    .hero p{font-size:1.2rem;color:#ddd;margin:1rem 0}
-    .hero .btn{background:#ff9100;color:#000;padding:1rem 2.8rem;border-radius:50px;font-weight:700;font-size:1.1rem}
+    .hero .overlay{position:relative;z-index:1;padding:0 1rem}
+    .hero h1{font-size:clamp(2.2rem, 8vw, 3.2rem);color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+    .hero p{font-size:clamp(1rem, 4vw, 1.2rem);color:#ddd;margin:1rem 0}
+    .hero .btn{background:#ff9100;color:#000;padding:1rem 2.8rem;border-radius:50px;font-weight:700;font-size:clamp(1rem, 3.5vw, 1.1rem)}
     .hero .btn:hover{background:#ffb84d;transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,145,0,.4)}
     .puppy-detail{padding:3rem 0}
-    .puppy-detail .grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+    .puppy-detail .grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;width:100%}
     .puppy-detail .left{order:1}
     .puppy-detail .right{order:2}
-    .puppy-detail img.main{width:100%;border-radius:16px;height:400px;object-fit:cover}
-    .thumbnails{display:flex;gap:.5rem;margin-top:1rem;overflow-x:auto;padding:1rem 0}
-    .thumbnails img{width:80px;height:80px;object-fit:cover;border-radius:8px;cursor:pointer;opacity:.7;transition:.3s}
+    .puppy-detail img.main{width:100%;border-radius:16px;height:clamp(300px, 50vw, 400px);object-fit:cover}
+    .thumbnails{display:flex;gap:.5rem;margin-top:1rem;overflow-x:auto;padding:1rem 0;-webkit-overflow-scrolling:touch;width:100%;justify-content:center;align-items:center}
+    .thumbnails img{width:clamp(70px, 18vw, 80px);height:clamp(70px, 18vw, 80px);object-fit:cover;border-radius:8px;cursor:pointer;opacity:.7;transition:.3s;flex-shrink:0;position:relative}
     .thumbnails img:hover,.thumbnails img.active{opacity:1;transform:scale(1.05);border:2px solid #ff9100}
-    .puppy-info h1{font-size:2.5rem;margin-bottom:.5rem}
-    .puppy-info .tag{color:#66bb6a;font-size:.95rem;margin-bottom:1rem}
-    .puppy-info .price{font-size:2rem;font-weight:800;color:#ff9100;margin:1rem 0}
-    .puppy-info .price a{color:#ff9100;text-decoration:underline}
-    .puppy-info .details{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1.5rem;margin:1.5rem 0;font-size:.95rem}
+    .thumbnails .video-thumb::before{content:'\f04b';font-family:'Font Awesome 6 Free';font-weight:900;color:#fff;font-size:2rem;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:2}
+    .thumbnails .video-thumb::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);border-radius:8px}
+    .puppy-info h1{font-size:clamp(2rem, 6vw, 2.5rem);margin-bottom:.5rem;text-align:center}
+    .puppy-info .tag{color:#66bb6a;font-size:.95rem;margin-bottom:1rem;text-align:center}
+    .puppy-info .price{font-size:clamp(1.8rem, 5vw, 2rem);font-weight:800;color:#ff9100;margin:1rem 0;text-align:center}
+    .puppy-info .details{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem 1.5rem;margin:1.5rem 0;font-size:.95rem}
     .puppy-info .details div strong{color:#ccc}
-    .puppy-info .actions{margin-top:2rem;text-align:center}
+    .puppy-info .actions{margin-top:2rem;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
     .puppy-info .actions .btn.take{
-      background:#ff9100;color:#000;padding:1.2rem 3.2rem;border-radius:50px;font-weight:800;font-size:1.3rem;
+      background:#ff9100;color:#000;padding:1.2rem 3.2rem;border-radius:50px;font-weight:800;font-size:clamp(1.2rem, 4vw, 1.3rem);
       box-shadow:0 8px 20px rgba(255,145,0,.4);position:relative;overflow:hidden;transition:all .4s cubic-bezier(0.25,0.8,0.25,1);
       animation:pulse 2s infinite;cursor:pointer;display:inline-block
     }
@@ -70,58 +71,115 @@
       0%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}25%{transform:translate(-50%,-50%) rotate(-20deg) scale(1.1)}50%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}75%{transform:translate(-50%,-50%) rotate(20deg) scale(1.1)}100%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}
     }
     .bio-section{padding:3rem 0;background:#111}
-    .bio-section h2{font-size:2rem;color:#ff9100;margin-bottom:1rem}
+    .bio-section h2{font-size:clamp(1.8rem, 5vw, 2rem);color:#ff9100;margin-bottom:1rem}
     .bio-section p{font-size:1rem;color:#ccc;line-height:1.7;margin-bottom:1.5rem}
-    .breeder-card{display:flex;gap:1rem;align-items:center;background:#222;padding:1.5rem;border-radius:12px}
+    .breeder-card{display:flex;gap:1rem;align-items:center;background:#222;padding:1.5rem;border-radius:12px;flex-wrap:wrap}
     .breeder-card img{width:60px;height:60px;border-radius:50%;object-fit:cover}
     .breeder-card .info h3{font-size:1.1rem;margin-bottom:.2rem}
     .breeder-card .info p{font-size:.9rem;color:#aaa}
     .included-section{padding:3rem 0}
-    .included-section h2{font-size:2rem;color:#ff9100;margin-bottom:1.5rem}
-    .included-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
-    .included-item{display:flex;gap:1rem;align-items:start}
-    .included-item i{color:#66bb6a;font-size:1.3rem;margin-top:.1rem}
-    .included-item div h4{font-size:1rem;margin-bottom:.3rem}
-    .included-item div p{font-size:.9rem;color:#ccc}
-    .parents-section{padding:3rem 0;background:#111}
-    .parents-section h2{font-size:2rem;color:#ff9100;margin-bottom:1.5rem;text-align:center}
-    .parents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-    .parent-card{background:#222;padding:1.5rem;border-radius:12px;text-align:center}
-    .parent-card img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:1rem}
-    .parent-card h3{font-size:1.2rem;margin-bottom:.5rem}
-    .parent-card .details{font-size:.9rem;color:#ccc;line-height:1.6}
+    .included-section h2{font-size:clamp(1.8rem, 5vw, 2rem);color:#ff9100;margin-bottom:1.5rem;text-align:center}
+    .included-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;justify-content:center}
+    .included-item{display:flex;gap:1rem;align-items:center;justify-content:flex-start;flex-direction:row;text-align:left;padding:1rem 0}
+    .included-item i{color:#66bb6a;font-size:2rem;margin-right:1rem;flex-shrink:0}
+    .included-item div h4{font-size:1.1rem;margin-bottom:.4rem;color:#fff}
+    .included-item div p{font-size:.95rem;color:#ccc}
     .siblings-section{padding:3rem 0}
-    .siblings-section h2{font-size:2rem;color:#ff9100;margin-bottom:1.5rem;text-align:center}
-    .siblings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
-    .sibling-card{background:#222;padding:1rem;border-radius:12px;text-align:center;position:relative}
-    .sibling-card img{width:100%;height:160px;object-fit:cover;border-radius:12px}
-    .sibling-card .status{position:absolute;top:8px;left:8px;background:#66bb6a;color:#fff;padding:4px 8px;border-radius:6px;font-size:.8rem;font-weight:600}
-    .sibling-card .status.reserved{background:#ff9100}
-    .sibling-card h4{font-size:1rem;margin:.8rem 0 .3rem}
-    .sibling-card p{font-size:.85rem;color:#ccc}
-    .sibling-card .heart{position:absolute;top:8px;right:8px;color:#fff;font-size:1.2rem;opacity:.7;transition:.2s}
-    .sibling-card .heart:hover{opacity:1;transform:scale(1.3)}
+    .siblings-section h2{font-size:clamp(1.8rem, 5vw, 2rem);color:#ff9100;margin-bottom:1.5rem;text-align:center}
     .more-cavapoos{padding:4rem 0;background:#111}
-    .more-cavapoos h2{font-size:2rem;color:#ff9100;margin-bottom:2rem;text-align:center}
-    .more-grid{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding:1rem 0}
-    .more-grid-inner{display:inline-flex;gap:1.5rem}
-    .more-card{background:#222;border-radius:16px;overflow:hidden;width:240px;text-align:center;position:relative;flex-shrink:0}
-    .more-card img{width:100%;height:190px;object-fit:cover}
-    .more-card .info{padding:1rem}
-    .more-card h4{font-size:1.1rem;margin:0.5rem 0}
-    .more-card p{font-size:0.85rem;color:#ccc;margin:0.3rem 0}
-    .more-card .heart{position:absolute;top:12px;right:12px;color:#fff;font-size:1.3rem;opacity:0.7;transition:0.2s}
-    .more-card .heart:hover{opacity:1;transform:scale(1.2)}
+    .more-cavapoos h2{font-size:clamp(1.8rem, 5vw, 2rem);color:#ff9100;margin-bottom:2rem;text-align:center}
+    /* UPDATED CARD GRID FOR 2x2 MOBILE VIEW */
+    .card-grid, .siblings-grid, .more-grid-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      justify-items: center;
+    }
+    .sibling-card, .more-card {
+      background: #fff;
+      color: #333;
+      padding: 0;
+      border-radius: 12px;
+      text-align: left;
+      position: relative;
+      transition: transform .3s, box-shadow .3s;
+      display: block;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+    .sibling-card:hover, .more-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .sibling-card img, .more-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .sibling-card .card-content, .more-card .info {
+      padding: 12px;
+    }
+    .sibling-card h4, .more-card h4 {
+      font-size: 1.1rem;
+      margin: 0;
+      text-align: left;
+      color: #222;
+    }
+    .sibling-card p, .more-card p {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 2px 0;
+      text-align: left;
+    }
+    .sibling-card .status {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      z-index: 2;
+    }
+    .sibling-card .heart, .more-card .heart {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      color: #888;
+      font-size: 1.2rem;
+      transition: .2s;
+      z-index: 2;
+    }
+    .sibling-card .heart:hover, .more-card .heart:hover {
+      color: #ff4757;
+      transform: scale(1.2);
+    }
+    .video-icon-tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+        background: rgba(0,0,0,0.3);
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+    /* PRE-FOOTER */
     .pre-footer{background:#111;padding:3rem 0;border-top:1px solid #222}
-    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;text-align:center}
+    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;text-align:center}
     .pre-footer .social a{margin:0 .7rem;font-size:1.6rem;color:#ff9100;transition:.2s}
     .pre-footer .social a:hover{transform:scale(1.2)}
     .payment-secure{text-align:center;margin-top:2rem;font-size:.95rem;color:#aaa}
-    .trust-badges{display:flex;justify-content:center;gap:1.5rem;margin-top:1rem;flex-wrap:wrap}
-    .trust-badges img{height:48px}
-    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center}
+    .trust-badges{display:flex;justify-content:center;align-items:center;gap:1.5rem;margin-top:1rem;flex-wrap:wrap}
+    .trust-badges img{height:48px;max-width:100%;object-fit:contain}
+    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center;display:flex;justify-content:center;align-items:center}
     footer a{color:#ff9100}
-
     /* Christmas snow */
     .snow span{position:fixed;top:-30px;font-size:1.3rem;color:#fff;pointer-events:none;opacity:.7;z-index:9999;animation:snow linear infinite}
     @keyframes snow{0%{transform:translateY(-10vh)}100%{transform:translateY(110vh)}}
@@ -131,29 +189,108 @@
     .snow span:nth-child(4){left:55%;animation-duration:14s;animation-delay:3s}
     .snow span:nth-child(5){left:70%;animation-duration:11s;animation-delay:0s}
     .snow span:nth-child(6){left:85%;animation-duration:13s;animation-delay:4s}
-
-    @media(max-width:992px){
-      .puppy-detail .grid{grid-template-columns:1fr}
-      .puppy-detail .left{order:2}
-      .puppy-detail .right{order:1}
-    }
+    /* MOBILE RESPONSIVE FIXES */
     @media(max-width:767px){
+      .container{padding:0 1rem !important}
       .hamburger{display:block}
       .nav-links,.right{display:none}
-      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1rem;border-bottom:1px solid #222}
-      .hero h1{font-size:2.5rem}
-      .puppy-info .actions .btn.take{width:100%}
+      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1.5rem 0;border-bottom:1px solid #222;width:100%;z-index:999}
+     
+      /* THIS FORCES THE 2-COLUMN GRID ON MOBILE */
+      .siblings-grid, .more-grid-inner {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        display: grid !important;
+      }
+     
+      .sibling-card, .more-card {
+        max-width: 100%;
+        margin: 0;
+      }
+      .sibling-card img, .more-card img {
+        height: 150px;
+      }
+      .puppy-detail .grid{display:block}
+      .puppy-detail img.main{width:100%; border-radius: 0; margin-left: 0; height: auto;}
+      .hero{display:none}
+      /* MOBILE: FORCE THE INFO TO SHOW AFTER IMAGES */
+      .puppy-detail .right{
+        display:block !important;
+        width:100%;
+        padding:2rem 1rem 3rem;
+        background:#000;
+        text-align:center
+      }
+      .puppy-info{
+        text-align:center;
+      }
+      .puppy-info h1{
+        font-size:clamp(2.4rem,8vw,3rem);
+        margin:0.5rem 0 1rem
+      }
+      .puppy-info .tag{
+        font-size:1.1rem;
+        font-weight:600;
+        margin:1rem 0 1.5rem;
+        display:block
+      }
+      .puppy-info .price{
+        font-size:clamp(2.4rem,8vw,3rem);
+        margin:1.5rem 0;
+        position:relative;
+        display:inline-block
+      }
+      .puppy-info .price::after{
+        content:'❄️';
+        position:absolute;
+        right:-35px;
+        top:50%;
+        transform:translateY(-50%);
+        font-size:1.8rem
+      }
+      .puppy-info .details{
+        grid-template-columns:repeat(3,1fr);
+        gap:1.5rem;
+        margin:2.5rem 0
+      }
+      .puppy-info .details div strong{
+        font-size:1.1rem;
+        display:block;
+        margin-bottom:0.4rem
+      }
+      .puppy-info .actions .btn.take{
+        width:100%;
+        max-width:420px;
+        padding:1.6rem;
+        font-size:1.5rem;
+        border-radius:60px;
+        box-shadow:0 10px 40px rgba(255,145,0,.6)
+      }
+      .puppy-info .actions p{
+        margin-top:1.2rem;
+        font-size:0.9rem;
+        color:#aaa
+      }
+    }
+    @media(max-width:480px){
+      /* Ensure 2 columns even on very small screens */
+      .siblings-grid, .more-grid-inner {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+      }
+      .sibling-card .card-content h4, .more-card .info h4 { font-size: 0.95rem; }
+      .sibling-card .card-content p, .more-card .info p { font-size: 0.75rem; }
+      .puppy-info .details{
+        grid-template-columns:1fr
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Christmas snow -->
   <div class="snow">
     <span>❅</span><span>❆</span><span>❅</span><span>❆</span><span>❅</span><span>❆</span>
   </div>
-
-  <!-- HEADER -->
+  
   <header>
     <div class="green-banner">
       <div class="container">Adopt Before Christmas — Limited Litters! Message Us On <a href="https://wa.me/12495216417" target="_blank">WhatsApp</a></div>
@@ -180,11 +317,9 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
      <video autoplay loop muted playsinline poster="../../videos/countess-hero-fallback.jpg" preload="auto">
       <source src="/Welsh Corgi/baron, count,duke,duchess/drake-.mp4" type="video/mp4">
-      <source src="/Welsh Corgi/baron, count,duke,duchess/drake-.mp4" type="video/webm">
       Your browser does not support video.
     </video>
     <div class="overlay container">
@@ -194,17 +329,17 @@
     </div>
   </section>
 
-  <!-- PUPPY DETAIL -->
   <section class="puppy-detail">
     <div class="container grid">
       <div class="left">
-        <img src="countess/countess1.jpg" alt="Countess playing" class="main" id="main-img">
+        <img src="countess/countess1.jpg" alt="Countess playing" class="main" id="main-img" loading="lazy">
         <div class="thumbnails">
-          <img src="countess/countess2.jpg" alt="Countess 1" class="active" onclick="changeImg(this)">
-          <img src="countess/countess3.jpg" alt="Countess 2" onclick="changeImg(this)">
-          <img src="countess/countess4.jpg" alt="Countess 3" onclick="changeImg(this)">
-          <img src="countess/countess5.jpg" alt="Countess 4" onclick="changeImg(this)">
-          <img src="countess/countess6.jpg" alt="Countess 5" onclick="changeImg(this)">
+          <img src="../../videos/countess-hero-fallback.jpg" alt="Video of Countess" class="video-thumb" onclick="changeImg(this)" loading="lazy">
+          <img src="countess/countess2.jpg" alt="Countess 1" class="active" onclick="changeImg(this)" loading="lazy">
+          <img src="countess/countess3.jpg" alt="Countess 2" onclick="changeImg(this)" loading="lazy">
+          <img src="countess/countess4.jpg" alt="Countess 3" onclick="changeImg(this)" loading="lazy">
+          <img src="countess/countess5.jpg" alt="Countess 4" onclick="changeImg(this)" loading="lazy">
+          <img src="countess/countess6.jpg" alt="Countess 5" onclick="changeImg(this)" loading="lazy">
         </div>
       </div>
       <div class="right">
@@ -223,7 +358,7 @@
           <div class="actions">
             <a href="https://wa.me/12495216417?text=Hi!%20I'd%20like%20to%20reserve%20Countess!" class="btn take" id="takeBtn">
               <span>Take Me Home</span>
-              <div class="paw-loader">Paw</div>
+              <div class="paw-loader">🐾</div>
             </a>
             <p style="font-size:.85rem;color:#aaa;margin-top:.8rem">Payments secured by Stripe • 72-hour health guarantee with vet check • Full health records</p>
           </div>
@@ -232,11 +367,10 @@
     </div>
   </section>
 
-  <!-- BIO -->
   <section class="bio-section">
     <div class="container">
       <h2>Hi, I'm Countess!</h2>
-      <p>All hail Countess, an 8-week-old tri-color Pembroke Welsh Corgi girl born to reign in elegance. My perfect black, white, and tan markings are pure royalty, my posture is graceful, and my sweet face melts hearts instantly. Born October 15th a Libra queen who brings harmony, love, and corgi magic everywhere I go. My mom Willow and dad Ranger are champion show corgis. Ready late December to grace your palace with beauty and devotion. Bow to your new corgi queen!</p>
+      <p>All hail Countess, an 8-week-old tri-color Pembroke Welsh Corgi girl born to reign in elegance. My perfect black, white, and tan markings are pure royalty, my posture is graceful, and my sweet face melts hearts instantly. Born October 15th a Libra queen who brings harmony, love, and corgi magic everywhere I go. My mom Willow and dad Ranger are champion show corgis. Ready late December to grace your palace with beauty and devotion.</p>
       <div class="breeder-card">
         <img src="/breeders/michaeel.jpg" alt="Michael Davis">
         <div class="info">
@@ -248,7 +382,6 @@
     </div>
   </section>
 
-  <!-- INCLUDED -->
   <section class="included-section">
     <div class="container">
       <h2>Everything included with Countess</h2>
@@ -258,115 +391,95 @@
         <div class="included-item"><i class="fas fa-user-check"></i><div><h4>USDA-Licensed Breeder</h4><p>Inspected annually</p></div></div>
         <div class="included-item"><i class="fas fa-syringe"></i><div><h4>Age-Appropriate Vaccines</h4><p>Dewormed 3x</p></div></div>
         <div class="included-item"><i class="fas fa-stethoscope"></i><div><h4>Full Vet Exam</h4><p>Health cert included</p></div></div>
-        <div class="included-item"><i class="fas fa-gift"></i><div><h4>Puppy Starter Pack</h4><p>Food, toy, blanket with mom’s scent</p></div></div>
+        <div class="included-item"><i class="fas fa-gift"></i><div><h4>Puppy Starter Pack</h4><p>Food, toy, blanket</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- PARENTS -->
- 
-
-  <!-- SIBLINGS -->
   <section class="siblings-section">
     <div class="container">
       <h2>Countess's Littermates</h2>
       <div class="siblings-grid">
-        <div class="sibling-card">
-          <div class="status reserved">Rehomed</div>
-          <img src="/Welsh Corgi/baron, count,duke,duchess/baron.jpg" alt="Baron">
-          <h4>Baron</h4>
-          <p>Male • Tri-Color</p>
-          <a href="baron.html" class="heart"><i class="far fa-heart"></i></a>
-        </div>
-        <div class="sibling-card">
-          <div class="status">Available</div>
-          <img src="/Welsh Corgi/duke/duke1.jpg" alt="Duke">
-          <h4>Duke</h4>
-          <p>Male • Tri-Color</p><br>
-          <p style="color: #ff9100;"><strong>$750</strong></p> 
-          <a href="duke.html" class="heart"><i class="far fa-heart"></i></a>
-        </div>
-        <div class="sibling-card">
-          <div class="status">Available</div>
-          <img src="/Welsh Corgi/duchess/duchess1.jpg" alt="Duchess">
-          <h4>Duchess</h4>
-          <p>Female • Tri-Color</p><br>
-          <p style="color: #ff9100;"><strong>$750</strong></p> 
-          <a href="duchess.html" class="heart"><i class="far fa-heart"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MORE CORGIS -->
- <section class="more-cavapoos">
-    <div class="container">
-      <h2>More Available Pembroke Welsh Corgis</h2>
-      <div class="more-grid">
-        <div class="more-grid-inner">
-          <div class="more-card">
-            <img src="/Welsh Corgi/grace,will,karen, jack/will.jpg" alt="Will">
-            <div class="info"><h4>Will</h4><p>Female • Tri-Color • 9 weeks</p></div>
-            <p style="color: #ff9100;"><strong>$950</strong></p> 
-            <a href="will.html" class="heart"><i class="far fa-heart"></i></a>
+        <a href="baron.html" class="sibling-card">
+          <div class="video-icon-tag"><i class="fas fa-video"></i></div>
+          <img src="/Welsh Corgi/baron, count,duke,duchess/baron.jpg" alt="Baron" loading="lazy">
+          <div class="card-content">
+              <h4>Baron</h4>
+              <p>Pembroke Corgi</p>
+              <p>8 weeks</p>
           </div>
-          <div class="more-card">
-            <img src="/Welsh Corgi/stitch/stitch.jpg" alt="Stitch">
-            <div class="info"><h4>Stitch</h4><p>Female • Tri-Color • 7 weeks</p></div>
-            <p style="color: #ff9100;"><strong>$950</strong></p> 
-            <a href="stitch.html" class="heart"><i class="far fa-heart"></i></a>
+          <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
+        </a>
+        <a href="duke.html" class="sibling-card">
+          <div class="video-icon-tag"><i class="fas fa-video"></i></div>
+          <img src="/Welsh Corgi/duke/duke1.jpg" alt="Duke" loading="lazy">
+          <div class="card-content">
+              <h4>Duke</h4>
+              <p>Pembroke Corgi</p>
+              <p>8 weeks</p>
           </div>
-          <div class="more-card">
-            <img src="/Welsh Corgi/sir/sir,stitch.jpg" alt="Sir">
-            <div class="info"><h4>Sir</h4><p>Female • Tri-Color • 9 weeks</p></div>
-            <p style="color: #ff9100;"><strong>$975</strong></p> 
-            <a href="sir.html" class="heart"><i class="far fa-heart"></i></a>
+          <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
+        </a>
+        <a href="duchess.html" class="sibling-card">
+          <div class="video-icon-tag"><i class="fas fa-video"></i></div>
+          <img src="/Welsh Corgi/duchess/duchess1.jpg" alt="Duchess" loading="lazy">
+          <div class="card-content">
+              <h4>Duchess</h4>
+              <p>Pembroke Corgi</p>
+              <p>8 weeks</p>
           </div>
-          <div class="more-card">
-            <img src="/Welsh Corgi/lord,marlee,mavis,max/mavis1.jpg" alt="Mavis">
-            <div class="info"><h4>Mavis</h4><p>Female • Tri-Color • 9 weeks</p></div>
-            <p style="color: #ff9100;"><strong>$850</strong></p>
-            <a href="mavis.html" class="heart"><i class="far fa-heart"></i></a>
-          </div>
-          <div class="more-card">
-            <img src="/Welsh Corgi/princess/princess,sir,stitch.jpg" alt="Princess">
-            <div class="info"><h4>Princess</h4><p>Male • Tri-Color • 9 weeks</p></div>
-            <p style="color: #ff9100;"><strong>$975</strong></p> 
-            <a href="princess.html" class="heart"><i class="far fa-heart"></i></a>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:2rem">
-        <a href="../pembroke-corgi.html" style="background:#ff9100;color:#000;padding:0.9rem 2.5rem;border-radius:50px;font-weight:700;font-size:1rem;display:inline-block;transition:0.3s"
-           onmouseover="this.style.background='#ffb84d';this.style.transform='translateY(-3px)'"
-           onmouseout="this.style.background='#ff9100';this.style.transform='translateY(0)'">
-          View All Pembroke Welsh Corgis
+          <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- PRE-FOOTER -->
+  <section class="more-cavapoos">
+    <div class="container">
+      <h2>More Available Pembroke Welsh Corgis</h2>
+      <div class="more-grid">
+        <div class="more-grid-inner">
+          <a href="will.html" class="more-card">
+            <img src="/Welsh Corgi/grace,will,karen, jack/will.jpg" alt="Will" loading="lazy">
+            <div class="info"><h4>Will</h4><p>Pembroke Corgi • 9 weeks</p></div>
+            <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
+          </a>
+          <a href="stitch.html" class="more-card">
+            <img src="/Welsh Corgi/stitch/stitch.jpg" alt="Stitch" loading="lazy">
+            <div class="info"><h4>Stitch</h4><p>Pembroke Corgi • 7 weeks</p></div>
+            <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
+          </a>
+          <a href="sir.html" class="more-card">
+            <img src="/Welsh Corgi/sir/sir,stitch.jpg" alt="Sir" loading="lazy">
+            <div class="info"><h4>Sir</h4><p>Pembroke Corgi • 9 weeks</p></div>
+            <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
+          </a>
+          <a href="mavis.html" class="more-card">
+            <img src="/Welsh Corgi/lord,marlee,mavis,max/mavis1.jpg" alt="Mavis" loading="lazy">
+            <div class="info"><h4>Mavis</h4><p>Pembroke Corgi • 9 weeks</p></div>
+            <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="pre-footer">
     <div class="container grid">
-      <div>Over 92+ happy families since 2024. Your perfect puppy is waiting.</div>
+      <div>Over 92+ happy families. Your perfect puppy is waiting.</div>
       <div><strong>Need help?</strong><br>Mon–Sat 9AM–7PM CST</div>
       <div>
         <strong>Follow us</strong>
         <div class="social">
-          <a href="https://instagram.com/puppyspur_official" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://facebook.com/puppyspur" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://youtube.com/@puppyspur" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="https://tiktok.com/@puppyspur" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
       </div>
     </div>
     <div class="container payment-secure">
-      <p>We accept PayPal • Venmo • Cash App • Zelle</p>
-    <div class="trust-badges">
+      <div class="trust-badges">
         <img src="/Images/paypal_PNG22.png" alt="PayPal">
         <img src="/Images/venmo.png" alt="Venmo">
-        <img src="/Images/cashapp.png" alt="Cash App">
         <img src="/Images/zelle.png" alt="Zelle">
       </div>
     </div>
@@ -374,7 +487,7 @@
 
   <footer>
     <div class="container">
-      © 2025 Puppy’s Pur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
+      © 2025 Puppy’s Pur • Hillsboro, TX • USDA #74-A-2468
     </div>
   </footer>
 
@@ -383,7 +496,26 @@
       document.querySelector('.nav-links').classList.toggle('active');
     });
     function changeImg(img) {
-      document.getElementById('main-img').src = img.src;
+      const mainContainer = document.querySelector('.left');
+      const main = document.getElementById('main-img');
+      const existingVideo = mainContainer.querySelector('video');
+      if (existingVideo) existingVideo.remove();
+      if (img.classList.contains('video-thumb')) {
+        main.style.display = 'none';
+        const video = document.createElement('video');
+        video.src = "/Welsh Corgi/baron, count,duke,duchess/drake-.mp4";
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsinline = true;
+        video.style.width = '100%';
+        video.style.borderRadius = '16px';
+        video.style.objectFit = 'cover';
+        mainContainer.insertBefore(video, main);
+      } else {
+        main.style.display = 'block';
+        main.src = img.src;
+      }
       document.querySelectorAll('.thumbnails img').forEach(i => i.classList.remove('active'));
       img.classList.add('active');
     }

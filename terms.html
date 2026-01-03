@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Puppy Pur Terms of Sales – Clear and fair policies for your peace of mind." />
-  <title>Terms of Sales | Puppy Pur</title>
+  <meta name="description" content="Puppy Pur Terms of Sale – Clear, fair, and transparent policies for your peace of mind." />
+  <title>Terms of Sale | Puppy Pur</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -14,86 +14,74 @@
     a{color:#fff;text-decoration:none;transition:all .25s}
     a:hover{color:#ff9100}
     h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
-    .container{max-width:1240px;margin:auto;padding:0 1rem}
+    .container{max-width:1240px;margin:auto;padding:0 1rem;width:100%}
     header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
-    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem}
+    .green-banner{background:#219653;color:#fff;text-align:center;padding:.75rem 0;font-weight:600;font-size:.95rem;display:flex;justify-content:center;align-items:center}
     .green-banner a{color:#fff;text-decoration:underline}
-    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100}
-    .logo i{font-size:2.2rem;color:#ff9100}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.6rem;font-weight:800;color:#ff9100;flex-shrink:0}
+    .logo i{color:#ff9100;font-size:2.2rem}
     .logo span{font-size:.85rem;color:#aaa;margin-left:.5rem}
-    .nav-links{display:flex;gap:2rem;font-size:.95rem}
+    .nav-links{display:flex;gap:2rem;font-size:.95rem;align-items:center}
     .nav-links a{color:#fff;font-weight:600;position:relative}
     .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#ff9100;transition:width .3s}
     .nav-links a:hover::after{width:100%}
-    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem}
+    .right{display:flex;align-items:center;gap:1.5rem;font-size:.95rem;flex-shrink:0}
     .right a{color:#ff9100;font-weight:600;display:flex;align-items:center;gap:.4rem}
     .hamburger{display:none;cursor:pointer;font-size:1.8rem;color:#fff}
-    .hero{position:relative;height:60vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:#111}
+    .hero{position:relative;height:60vh;min-height:400px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:#111}
+    .hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url('/Images/terms-hero.jpg') center/cover no-repeat;opacity:.3}
     .hero .overlay{position:relative;z-index:1;padding:2rem}
-    .hero h1{font-size:3.5rem;color:#fff;margin-bottom:1rem}
-    .hero p{font-size:1.2rem;color:#ddd;max-width:900px;margin:auto;line-height:1.7}
+    .hero h1{font-size:clamp(2.5rem,8vw,3.5rem);color:#fff;margin-bottom:1rem}
+    .hero p{font-size:clamp(1rem,4vw,1.2rem);color:#ddd;max-width:900px;margin:auto;line-height:1.7}
     .content-section{padding:5rem 0;background:#111}
-    .terms-box{background:#222;padding:3rem;border-radius:20px;margin:3rem 0;box-shadow:0 10px 30px rgba(0,0,0,0.4);border-left:5px solid #ff9100}
-    .terms-box h2{font-size:2.5rem;color:#ff9100;margin-bottom:1.5rem;text-align:left}
-    .terms-box p{font-size:1.1rem;line-height:1.8;margin-bottom:1.2rem}
-    .terms-box ul{list-style:none;padding-left:0}
-    .terms-box li{position:relative;padding-left:2rem;margin-bottom:1rem;font-size:1.05rem}
-    .terms-box li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;color:#66bb6a;position:absolute;left:0;top:2px}
+    .terms-box{background:#222;padding:3rem;border-radius:20px;margin:3rem 0;box-shadow:0 10px 30px rgba(0,0,0,0.4);border-left:5px solid #ff9100;position:relative;overflow:hidden}
+    .terms-box::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(255,145,0,0.1),transparent);pointer-events:none}
+    .terms-box h2{font-size:clamp(2rem,6vw,2.5rem);color:#ff9100;margin-bottom:1.5rem;text-align:left}
+    .terms-box p{font-size:1.1rem;line-height:1.8;margin-bottom:1.2rem;color:#ddd}
+    .terms-box ul{list-style:none;padding-left:0;margin:1.5rem 0}
+    .terms-box li{position:relative;padding-left:2.5rem;margin-bottom:1rem;font-size:1.05rem;color:#ccc}
+    .terms-box li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;color:#66bb6a;position:absolute;left:0;top:2px;font-size:1.4rem}
     .highlight{font-weight:700;color:#ff9100}
-    .note{font-size:.95rem;color:#aaa;margin-top:2rem;font-style:italic}
+    .note{font-size:.95rem;color:#aaa;margin-top:2rem;font-style:italic;text-align:center}
     .pre-footer{background:#111;padding:3rem 0;border-top:1px solid #222}
-    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;text-align:center;align-items:start}
+    .pre-footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;text-align:center;align-items:start}
     .pre-footer .social a{margin:0 .7rem;font-size:1.6rem;color:#ff9100;transition:.2s}
     .pre-footer .social a:hover{transform:scale(1.2)}
     .payment-secure{text-align:center;margin-top:2rem;font-size:.95rem;color:#aaa}
-    .trust-badges{display:flex;justify-content:center;align-items:center;gap:2rem;margin-top:1rem;flex-wrap:nowrap}
-    .trust-badges img{height:48px}
-    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center}
+    .trust-badges{display:flex;justify-content:center;align-items:center;gap:2rem;margin-top:1rem;flex-wrap:wrap}
+    .trust-badges img{height:48px;max-width:100%;object-fit:contain}
+    footer{background:#000;color:#777;padding:1.8rem 0;font-size:.85rem;text-align:center;display:flex;justify-content:center;align-items:center}
     footer a{color:#ff9100}
+    /* Christmas snow */
+    .snow span{position:fixed;top:-30px;font-size:1.3rem;color:#fff;pointer-events:none;opacity:.7;z-index:9999;animation:snow linear infinite}
+    @keyframes snow{0%{transform:translateY(-10vh)}100%{transform:translateY(110vh)}}
+    .snow span:nth-child(1){left:10%;animation-duration:12s;animation-delay:0s}
+    .snow span:nth-child(2){left:25%;animation-duration:15s;animation-delay:2s}
+    .snow span:nth-child(3){left:40%;animation-duration:10s;animation-delay:1s}
+    .snow span:nth-child(4){left:55%;animation-duration:14s;animation-delay:3s}
+    .snow span:nth-child(5){left:70%;animation-duration:11s;animation-delay:0s}
+    .snow span:nth-child(6){left:85%;animation-duration:13s;animation-delay:4s}
     @media(max-width:767px){
       .hamburger{display:block}
       .nav-links,.right{display:none}
-      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1rem;border-bottom:1px solid #222}
+      .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#000;padding:1.5rem 0;border-bottom:1px solid #222;width:100%;z-index:999}
       .hero h1{font-size:2.8rem}
       .terms-box{padding:2rem}
       .terms-box h2{font-size:2.2rem;text-align:center}
+      .terms-box li{padding-left:2rem}
+      .terms-box li::before{font-size:1.2rem}
       .pre-footer .grid{grid-template-columns:1fr}
       .trust-badges{gap:1rem;flex-wrap:wrap}
     }
-    /* Snowflakes */
-    .snowflake{position:fixed;top:-20px;color:#fff;pointer-events:none;z-index:9999;animation:fall linear infinite}
-    .snowflake.small{font-size:0.8rem;opacity:0.7}
-    @keyframes fall{0%{transform:translateY(-10vh) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
-    .snowflake:nth-child(1){left:10%;animation-duration:14s;animation-delay:0s}
-    .snowflake:nth-child(2){left:25%;animation-duration:18s;animation-delay:2s}
-    .snowflake:nth-child(3){left:40%;animation-duration:12s;animation-delay:1s}
-    .snowflake:nth-child(4){left:55%;animation-duration:16s;animation-delay:4s}
-    .snowflake:nth-child(5){left:70%;animation-duration:15s;animation-delay:1.5s}
-    .snowflake:nth-child(6){left:85%;animation-duration:20s;animation-delay:3s}
-    .snowflake:nth-child(7){left:15%;animation-duration:17s;animation-delay:5s}
-    .snowflake:nth-child(8){left:65%;animation-duration:13s;animation-delay:0.5s}
-    .snowflake:nth-child(9){left:35%;animation-duration:19s;animation-delay:6s}
-    .snowflake:nth-child(10){left:80%;animation-duration:11s;animation-delay:7s}
-    .snowflake:nth-child(11){left:5%;animation-duration:16s;animation-delay:4.5s}
-    .snowflake:nth-child(12){left:90%;animation-duration:15s;animation-delay:8s}
   </style>
 </head>
 <body>
 
-  <!-- Snowflakes -->
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake"><i class="fas fa-snowflake"></i></div>
-  <div class="snowflake small"><i class="fas fa-snowflake"></i></div>
+  <!-- Christmas snow -->
+  <div class="snow">
+    <span>❅</span><span>❆</span><span>❅</span><span>❆</span><span>❅</span><span>❆</span>
+  </div>
 
   <!-- HEADER -->
   <header>
@@ -103,18 +91,18 @@
     <div class="nav-bar container">
       <div class="logo">
         <i class="fas fa-paw"></i>
-        Puppy Pur
+        PuppysPur
         <span>Cute • Pet • Adoption • Haven • TX</span>
       </div>
       <div class="nav-links">
-        <a href="index.html#available">Available Puppies</a>
-        <a href="index.html#promise">Our Promise</a>
-        <a href="index.html#about">About Us</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="../index.html#available">Available Puppies</a>
+        <a href="../index.html#promise">Our Promise</a>
+        <a href="../index.html#about">About Us</a>
+        <a href="../how-it-works.html">How It Works</a>
+        <a href="../index.html#contact">Contact</a>
       </div>
       <div class="right">
-        <a href="https://wa.me/12495216417" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now </a>
+        <a href="https://wa.me/12495216417" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now</a>
       </div>
       <div class="hamburger">
         <i class="fas fa-bars"></i>
@@ -125,8 +113,8 @@
   <!-- HERO -->
   <section class="hero">
     <div class="overlay container">
-      <h1>PuppysPur Terms of Sales</h1>
-      <p>Transparent and fair policies to protect you and your new Corgi companion.</p>
+      <h1>Terms of Sale</h1>
+      <p>Clear, fair, and transparent policies designed to protect both you and your new Corgi companion.</p>
     </div>
   </section>
 
@@ -136,59 +124,59 @@
       <div class="terms-box">
         <h2>General Terms</h2>
         <ul>
-          <li>All sales are final. No cash refunds will be issued.</li>
-          <li>A $500 non-refundable deposit secures your chosen puppy.</li>
-          <li>Full payment is required before delivery.</li>
-          <li>We accept PayPal, Venmo, Cash App, and Zelle.</li>
-          <li>Puppies are released only when age-appropriate and fully vetted.</li>
+          <li>All sales are final — no cash refunds will be issued.</li>
+          <li>A $500 non-refundable deposit secures your selected puppy and position in line.</li>
+          <li>Remaining balance is due in full before delivery or pickup.</li>
+          <li>Accepted payment methods: PayPal • Venmo • Cash App • Zelle</li>
+          <li>Puppies are released only when age-appropriate, fully vetted, and healthy.</li>
         </ul>
       </div>
 
       <div class="terms-box">
         <h2>Delivery & Shipping</h2>
         <ul>
-          <li>Nationwide delivery available via flight nanny or personal drive.</li>
-          <li>All shipping costs are the responsibility of the buyer.</li>
-          <li>Puppies travel with health certificate, starter pack, and all records.</li>
-          <li>Buyer must be present to receive puppy or arrange approved pickup.</li>
+          <li>Nationwide ground or flight nanny delivery available.</li>
+          <li>All delivery/shipping costs and arrangements are the buyer’s responsibility.</li>
+          <li>Puppies travel with health certificate, vaccination records, microchip, and starter pack.</li>
+          <li>Buyer must be present to receive the puppy or arrange an approved representative.</li>
         </ul>
       </div>
 
       <div class="terms-box">
         <h2>Buyer Responsibilities</h2>
         <ul>
-          <li>Schedule veterinary exam within 72 hours of arrival and send us a copy.</li>
-          <li>Provide proper care, nutrition, socialization, and routine veterinary visits.</li>
-          <li>Follow vaccination schedule until fully protected (16–20 weeks).</li>
-          <li>Avoid high-risk areas (dog parks, pet stores) until vaccinations complete.</li>
-          <li>Notify us immediately of any health concerns.</li>
+          <li>Schedule a full veterinary exam within 72 hours of arrival and provide us a copy of the report.</li>
+          <li>Provide lifelong proper care, nutrition, socialization, and routine veterinary visits.</li>
+          <li>Follow recommended vaccination schedule until fully protected (16–20 weeks).</li>
+          <li>Avoid high-risk public areas (dog parks, pet stores) until vaccinations are complete.</li>
+          <li>Notify us immediately of any health or welfare concerns.</li>
         </ul>
-        <p class="note">Failure to follow these responsibilities voids all guarantees.</p>
+        <p class="note">Failure to meet these responsibilities voids all health guarantees.</p>
       </div>
 
       <div class="terms-box">
         <h2>Registration & Breeding Rights</h2>
         <ul>
-          <li>Pet puppies come with limited AKC registration (no breeding rights).</li>
-          <li>Full registration available for approved breeding homes at additional cost.</li>
-          <li>All registered names must include “Puppy Pur” prefix or suffix.</li>
-          <li>We reserve the right to refuse sale to any buyer.</li>
+          <li>Pet-quality puppies include limited AKC registration (no breeding rights).</li>
+          <li>Full breeding rights available for approved homes at additional cost.</li>
+          <li>All registered names must include “PuppysPur” prefix or suffix.</li>
+          <li>We reserve the right to refuse sale to any buyer for any reason.</li>
         </ul>
       </div>
 
       <div class="terms-box">
-        <h2>Additional Notes</h2>
+        <h2>Additional Policies</h2>
         <ul>
-          <li>No guarantee on final size, coat, ear set, bite, or temperament (influenced by environment).</li>
+          <li>No guarantee on final adult size, coat type/length, ear set, bite alignment, or exact temperament (influenced by environment).</li>
           <li>We do not guarantee against treatable conditions (parasites, giardia, kennel cough, etc.).</li>
-          <li>Puppy Pur reserves the right to reclaim any puppy not properly cared for.</li>
-          <li>By placing a deposit, you agree to these terms.</li>
+          <li>PuppysPur reserves the right to reclaim any puppy found in neglectful conditions.</li>
+          <li>Placing a deposit indicates full acceptance of these terms.</li>
         </ul>
       </div>
 
-      <div class="highlight-box" style="text-align:center;background:#222;">
-        <h3>We’re here for the lifetime of your Corgi.</h3>
-        <p style="margin-top:1rem;">Questions? Reach out anytime — we’re family.</p>
+      <div class="terms-box" style="text-align:center;background:linear-gradient(135deg,#222,#111);border:none">
+        <h3 style="font-size:2rem;color:#ff9100">We’re family for life.</h3>
+        <p style="margin-top:1.5rem;font-size:1.1rem;color:#ddd">Questions about our policies? We’re always here to help — just reach out.</p>
       </div>
     </div>
   </section>
@@ -196,7 +184,7 @@
   <!-- PRE-FOOTER -->
   <section class="pre-footer">
     <div class="container grid">
-      <div>Over 92+ happy families since 2024. Your perfect puppy is waiting.</div>
+      <div>Over 92+ happy families. Your perfect puppy is waiting.</div>
       <div><strong>Need help?</strong><br>Mon–Sat 9AM–7PM CST</div>
       <div>
         <strong>Follow us</strong>
@@ -211,10 +199,10 @@
     <div class="container payment-secure">
       <p>We accept PayPal • Venmo • Cash App • Zelle</p>
       <div class="trust-badges">
-        <img src="../badges/paypal.png" alt="PayPal">
-        <img src="../badges/venmo.png" alt="Venmo">
-        <img src="../badges/cashapp.png" alt="Cash App">
-        <img src="../badges/zelle.png" alt="Zelle">
+        <img src="/Images/paypal_PNG22.png" alt="PayPal">
+        <img src="/Images/venmo.png" alt="Venmo">
+        <img src="/Images/cashapp.png" alt="Cash App">
+        <img src="/Images/zelle.png" alt="Zelle">
       </div>
     </div>
   </section>
@@ -222,7 +210,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      © 2024 Puppy’s Pur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
+      © 2025 Puppy’s Pur Cute Pet Adoption Haven • 835 County Road 428, Hillsboro, TX 76645 • USDA #74-A-2468
     </div>
   </footer>
 

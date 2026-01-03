@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="All Reviews – PuppysPur Corgi Breeder" />
+  <title>All Reviews | PuppysPur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.5}
+    body{background:#000;overflow-x:hidden;position:relative}
+    a{color:#fff;text-decoration:none;transition:all .25s}
+    a:hover{color:#ff9100}
+    h1,h2{font-family:'Nunito',sans-serif;font-weight:700;text-align:center}
+    .container{max-width:1240px;margin:auto;padding:0 1rem;width:100%}
+    header{background:#000;position:sticky;top:0;z-index:1000;border-bottom:1px solid #222;padding:1.5rem 0}
+    .logo{font-size:2rem;font-weight:800;color:#ff9100;display:flex;align-items:center;justify-content:center;gap:.5rem}
+    .logo i{color:#ff9100;font-size:2.8rem}
+    .reviews-section{padding:5rem 0}
+    .reviews-header h1{font-size:2.8rem;color:#fff;margin-bottom:1rem}
+    .reviews-header p{font-size:1.2rem;color:#ccc;margin-bottom:3rem}
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:2.5rem;
+    }
+    .review-card{
+      background:#111;border-radius:16px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.4);
+      transition:all .3s ease;
+    }
+    .review-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(255,145,0,0.2)}
+    .review-img img{width:100%;height:220px;object-fit:cover}
+    .review-content{padding:1.8rem}
+    .stars{color:#00b67a;font-size:1.2rem;margin-bottom:1rem;display:flex;gap:5px}
+    .review-text{font-size:1.02rem;color:#ddd;line-height:1.7;margin-bottom:1.5rem}
+    .author{color:#66bb6a;font-size:1.05rem;display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem}
+    .author i{color:#66bb6a}
+    .date{color:#888;font-size:.95rem}
+    .pagination{
+      display:flex;justify-content:center;gap:1rem;margin-top:5rem;flex-wrap:wrap;
+    }
+    .pagination a{
+      width:55px;height:55px;border-radius:50%;background:#222;color:#fff;display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:1.1rem;transition:all .3s;
+    }
+    .pagination a:hover{background:#ff9100;color:#000;transform:scale(1.15)}
+    .pagination a.active{background:#ff9100;color:#000}
+    footer{background:#000;color:#777;padding:2.5rem 0;font-size:.95rem;text-align:center;border-top:1px solid #222}
+    footer a{color:#ff9100;font-weight:600}
+    @media(max-width:767px){
+      .reviews-grid{grid-template-columns:1fr}
+      .pagination a{width:50px;height:50px;font-size:1rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container logo">
+      <i class="fas fa-paw"></i> PuppysPur – All Reviews
+    </div>
+  </header>
+
+  <section class="reviews-section">
+    <div class="container">
+      <div class="reviews-header">
+        <h1>Real Families, Real Stories</h1>
+        <p>Over 92+ verified puppy parents trust PuppysPur. Here are their honest reviews.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review19.jpg" alt="Liam T. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I found this beautiful little ball of fur on this website. She was in TX, and I was in Pennsylvania so it would have been quite a drive to go get her. Furry trails transport service brought her to us. After setting up all the details with her breeders.. I could hardly wait. She was happy, clean, healthy, and even more adorable in person when she got to us. She’s so smart and social- collecting pets and hearts everywhere she goes. She now goes by Luna Nova and comes to work with me weekly to spread smiles all through the skilled nursing facility I work at. I couldn’t be more satisfied with the whole process</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Liam T., Oregon</p>
+            <p class="date">January 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review21.jpg" alt="Emma R. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">Hello I would like to say Puppyspur have made my families Christmas, we are so happy to have our new puppy Omar. Thanks to Mrs. Sarah and her family, we thank you so much</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Datron McKenzie</p>
+            <p class="date">January 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review22.jpg" alt="Sophia M. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <p class="review-text">I was unsure at first because there’s no phone support, only WhatsApp and email, but the team responded so fast and sent extra videos of our Merle pup. He arrived healthy and happy. Totally won me over.</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Sophia M., Florida</p>
+            <p class="date">February 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review23.jpg" alt="Noah K. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I so pleased to have found sarah-miller through Puppyspur. They had the perfect match for our forever home. Her name was Gabby, but we thought Lacey fit her better. Such a sweet joy and so much fun. She stole our heart, and you can see why.
+The Puppyspur family are a great loving breeder. Sarah made a special blanket for her & rubbed the scent of her sibling on it. She gave her a personal girl toy and a bag of puppy food they were using. Also, a new chip tag for her collar. She had a folder about all her personal and vet history. Everything was gathered in a special tote bag.
+We live about 2+hrs away but before we made it home Sarah texted to see if Lacey made it home ok. We’ve texted since. I hope we grow as Lacey grows. Such sweet, caring and thoughtful breeders. I can’t say enough good things about them. ❤️❤️</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Noah K., Georgia</p>
+            <p class="date">February 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review24.jpg" alt="Olivia P. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">Thank you so much  Sarah. Molly now Ariel is the best little puppy I have ever had! She has changed my life. Mike and Cheryl Yoder were so professional and nice. I really appreciate them!!</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Olivia P., Arizona</p>
+            <p class="date">March 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review25.jpg" alt="James H. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">Our Pembroke girl settled in on day one, so affectionate and smart. Puppy Pur handled everything professionally. Couldn’t ask for better.</p>
+            <p class="author"><i class="fas fa-check-circle"></i> James H., Michigan</p>
+            <p class="date">March 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review26.jpg" alt="Ava L. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">At first I missed having a phone number to call, but WhatsApp chats with PuppysPur were instant and helpful, even sent extra photos of our Merle pup. He’s perfect and healthy. No complaints!</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Ava L., Nevada</p>
+            <p class="date">April 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review27.jpg" alt="William S. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I got my puppy from michael and I love him. He is so active and lovable</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Pamela Roberts</p>
+            <p class="date">April 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/review28.jpg" alt="Charlotte B. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">I absolutely fell in love with Cooper, from the moment I met him. He’s the most friendliest, active, loving, and sometimes devious. I wouldn’t trade him for anything! So far, it’s been 3 weeks, and it feels like 3 years! In a good way. Cooper has learned crate training, potty training, discipline, he also has a big brother Shadow that he plays with on a daily. Thank you, Sarah for Cooper! Our life has been fulfilled with so much joy and happiness.!</p>
+            <p class="author"><i class="fas fa-check-circle"></i> chrystal scott</p>
+            <p class="date">June 2025</p>
+          </div>
+        </div>
+
+        <!-- Review 10 -->
+        <div class="review-card">
+          <div class="review-img"><img src="/Reviews/puppyspur------reviews.png" alt="Lucas G. family" loading="lazy"></div>
+          <div class="review-content">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">We bought Hadley from puppyspur. Very professional from start to finish. When we picked up our puppy he was clean, groomed and you could tell very well taken care/loved. We couldn’t be happier!! Very sweet and relaxed disposition. We highly recommend buying from this breeders.</p>
+            <p class="author"><i class="fas fa-check-circle"></i> Lucas</p>
+            <p class="date">June 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <a href="reviews.html" class="active">1</a>
+        <a href="reviews-page2.html">2</a>
+        <a href="reviews-page3.html">3</a>
+        <a href="reviews-page4.html">4</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2025 PuppysPur Cute Pet Adoption Haven • <a href="/index.html">Back to Home</a>
+    </div>
+  </footer>
+</body>
+</html>
