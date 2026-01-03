@@ -329,7 +329,7 @@
           <text x="30" y="19" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold">Trustpilot</text>
         </svg>
         <img src="https://cdn.trustpilot.net/brand-assets/4.2.0/stars/stars-4.5.svg" alt="4.5 stars" style="height:32px;">
-        <span style="color:#ccc;font-weight:500;font-size:1.1rem;margin-left:6px;">91+ reviews</span>
+        <span style="color:#ccc;font-weight:500;font-size:1.1rem;margin-left:6px;">92+ reviews</span>
       </div>
     </div>
   </section>
@@ -347,7 +347,7 @@
           <div class="counter-label">Happy Families</div>
         </div>
         <div class="counter-item">
-          <div class="counter-number" data-target="20">0+</div>
+          <div class="counter-number" data-target="28">0+</div>
           <div class="counter-label">Available Puppies</div>
         </div>
         <div class="counter-item">
@@ -487,10 +487,10 @@
           <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
         </a>
         <a href="Welsh Corgi/hank.html" class="puppy-card">
-          <img src="Welsh Corgi/hank/hank2.jpg" alt="Hank" loading="lazy">
+          <img src="Welsh Corgi/hank/Hank2.jpg" alt="Hank" loading="lazy">
           <div class="info">
             <h4>Hank</h4>
-            <p>Pembroke Corgi • 10 weeks</p>
+            <p>Pembroke Corgi • 11 weeks</p>
           </div>
           <div class="heart" onclick="event.preventDefault();"><i class="far fa-heart"></i></div>
         </a>
@@ -614,7 +614,6 @@
   <section id="about" class="about-section">
     <div class="container">
       <h2>About PuppysPur</h2>
-      <img src="about/corgi-family.jpg" alt="Our Corgi Family" style="max-width:100%;border-radius:16px;margin:2rem 0;" loading="lazy">
       <p>Family-owned in Hillsboro, Texas (USDA #74-A-2468), we’ve been raising happy, healthy Pembroke Welsh Corgis and rare Merle Corgis since 2014. Every puppy is born and raised in our home — never cages, never kennels. Parents are AKC-registered, OFA health-tested, and DNA-clear. We offer a full 2-year health guarantee, microchip, up-to-date shots, deworming, and lifetime breeder support. Over 92+ happy families nationwide have welcomed a PuppysPur Corgi into their lives. We ship safely coast-to-coast with a nanny or drive delivery available. Your perfect short-legged best friend is waiting!</p>
     </div>
   </section>
@@ -888,9 +887,9 @@
         <strong>Follow us</strong>
         <div class="social">
           <a href="https://facebook.com/puppypur" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://instagram.com/puppypur_official" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@puppypur" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="https://tiktok.com/@puppypur" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://instagram.com/puppyspur_official" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@puppyspur" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://tiktok.com/@puppyspur" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
     </div>
@@ -926,7 +925,7 @@
       });
     });
     const counters = document.querySelectorAll('.counter-number');
-    const targets = [11, 92, 20, 100];
+    const targets = [11, 92, 28, 100];  // ← Here is the fix: third number is now 28
     const suffixes = ['+', '+', '+', '%'];
     let triggered = false;
     const animateCounters = () => {
